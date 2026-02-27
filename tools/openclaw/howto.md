@@ -180,14 +180,10 @@ pending → in_progress → completed
 
 **用途**：结构化知识库，沉淀可复用知识
 
-**使用方式**：
-- 自动记录重要信息到 MEMORY.md
-- 手动创建笔记到 `~/Desktop/notes/`
-
 **工作机制**：
-1. 笔记采用 VitePress 构建
-2. 自动部署到 GitHub Pages
-3. 每次心跳时回顾近期记忆，提炼到长期记忆
+1. 问AI助理问题获取知识或协作工作
+2. 让AI助理把知识或经验总结成 Markdown 笔记
+3. 笔记采用 VitePress 构建，自动部署到 GitHub Pages
 
 **目录结构**：
 ```
@@ -204,10 +200,6 @@ pending → in_progress → completed
 └── projects/             # 项目笔记
 ```
 
-**命名规范**：
-- 文件名：kebab-case（如 `openclaw-setup-guide.md`）
-- 目录：按主题分子目录
-
 ---
 
 ### 任务项目（tasks）
@@ -215,15 +207,15 @@ pending → in_progress → completed
 **用途**：代码项目的开发和任务跟踪
 
 **使用方式**：
-- 每个任务一个独立目录
-- 内层目录是真正的 git 仓库
+- 每个任务一个独立目录 `xxxx-xx-xx-任务名`
+- 内层 `任务名` 目录是真正的 git 仓库
 
 **目录结构**：
 ```
 ~/Desktop/tasks/
 └── 2026-02-27-doctranslator/    # 任务资料目录
     ├── DESIGN.md                  # 技术方案
-    ├── docs/                     # 任务文档
+    ├── docs/                      # 任务文档
     └── doctranslator/             # 代码仓库（git）
         ├── .git/
         ├── src/
@@ -241,7 +233,7 @@ pending → in_progress → completed
 |------|--------|------|
 | **业务方** | 人类 | 提出需求和想法 |
 | **产品经理 + 架构师** | AI 助理 | 产品设计、技术架构、进度管控、功能验收 |
-| **程序员** | Claude Code | 代码实现 |
+| **程序员 + 测试工程师** | Claude Code | 代码实现 |
 
 ### 工作流程
 
@@ -258,7 +250,7 @@ pending → in_progress → completed
 - 输出设计文档（DESIGN.md）
 
 **3. 开发阶段**
-- AI 启动 Claude Code 执行代码任务
+- AI 启动 Claude Code 执行代码任务（通过 `🧩 coding-agent` 技能）
 - Claude Code 自主解决技术问题
 
 **4. 验收阶段**
