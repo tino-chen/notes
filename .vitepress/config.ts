@@ -10,7 +10,6 @@ export default defineConfig({
   
   // 导航配置
   themeConfig: {
-    logo: '/logo.svg',
     siteTitle: "Tino's Notes",
     
     nav: [
