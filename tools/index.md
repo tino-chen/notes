@@ -9,7 +9,7 @@
 - [OpenClaw 安装配置](./openclaw/openclaw-setup-guide)
 - [切换供应商和模型](./openclaw/model-provider)
 - [ClawHub 使用指南](./openclaw/clawhub)
-- [如何与 OpenClaw 高效协作？](./openclaw/collaboration) - 用于团队分享
+- [如何与 OpenClaw 高效协作？](./openclaw/howto) - 用于团队分享
 
 ### Claude
 
