@@ -25,11 +25,12 @@ export default defineConfig({
     sidebar: {
       '/tools/': [
         {
-          text: 'OpenClaw',
+          text: 'OpenClaw 生态',
           collapsed: false,
           items: [
             { text: 'OpenClaw 安装配置', link: '/tools/openclaw-setup-guide' },
             { text: '切换供应商和模型', link: '/tools/openclaw/model-provider' },
+            { text: 'ClawHub 使用指南', link: '/tools/clawhub' },
           ]
         },
         {
@@ -37,13 +38,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Claude Code 安装配置', link: '/tools/claude-code-setup-guide' },
-          ]
-        },
-        {
-          text: 'ClawHub',
-          collapsed: false,
-          items: [
-            { text: 'ClawHub 使用指南', link: '/tools/clawhub' },
           ]
         },
         {
