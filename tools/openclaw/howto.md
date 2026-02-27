@@ -5,7 +5,7 @@ description: OpenClaw 个性化配置与使用指南
 
 # 如何使用 OpenClaw？
 
-本文档介绍如何配置和使用 OpenClaw，打造属于你的个性化智能通。
+本文档介绍如何配置和使用 OpenClaw，打造属于你的个性化智能体。
 
 ---
 
@@ -116,10 +116,10 @@ OpenClaw 帮你建立完整的信息管理闭环：
 
 ### 收集系统
 
-| 功能 | 命令 | 说明 |
+| 功能 | 说明 | 位置 |
 |------|------|------|
-| **灵感** | `灵感：xxx` | 突发灵感想法 |
-| **代办** | `代办 xxx` | 待办事项（进入收集箱） |
+| **灵感** | 突发灵感想法，命令 `灵感：xxx` | `~/Desktop/inspiration/` |
+| **代办** | 待办事项（进入收集箱），命令 `代办 xxx` | `~/Desktop/todo/` |
 
 ### 沉淀系统
 
@@ -133,16 +133,19 @@ OpenClaw 帮你建立完整的信息管理闭环：
 ```
 ~/Desktop/
 ├── notes/          # 结构化知识库（VitePress + GitHub Pages）
-│   ├── tools/      # 工具使用指南
-│   ├── agent/      # Agent 相关笔记
-│   ├── llm/        # LLM 相关笔记
-│   └── projects/   # 项目记录
+│   ├── tools/          # 工具使用指南
+│   ├── agent/          # Agent 相关笔记
+│   ├── llm/            # LLM 相关笔记
+│   └── projects/       # 项目记录
 ├── tasks/          # 代码任务项目
 │   └── YYYY-MM-DD-任务名/
-└── todo/           # 待办管理
-    ├── inbox.json   # 收集箱
-    ├── daily/       # 每日待办
-    └── history/     # 已完成历史
+|── todo/           # 待办管理
+│   ├── inbox.json      # 收集箱
+│   ├── daily/          # 每日待办
+│   └── history/        # 已完成历史
+└── inspiration/    # 灵感收集
+    ├── YYYY-MM-DD.md   # 今日灵感
+    └── status.json     # 灵感状态
 ```
 
 ---
