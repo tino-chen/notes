@@ -4,6 +4,11 @@ export default defineConfig({
   title: "Tino's Notes",
   description: 'Ty Chen 的结构化知识库',
   
+  // favicon
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }]
+  ],
+  
   // GitHub Pages 部署配置
   base: '/notes/',
   
