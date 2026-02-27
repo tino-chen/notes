@@ -5,7 +5,7 @@ description: OpenClaw 个性化配置与使用指南
 
 # 如何使用 OpenClaw？
 
-本文档介绍如何配置和使用 OpenClaw，打造属于你的个性化智能体。
+本文档介绍如何配置和使用 OpenClaw，打造属于你的个性化智能通。
 
 ---
 
@@ -112,40 +112,123 @@ openclaw cron list
 
 ## 5. 个人管理系统
 
-OpenClaw 帮你建立完整的信息管理闭环：
+OpenClaw 帮你建立完整的信息管理闭环，收集灵感与代办，沉淀笔记与任务。
 
-### 收集系统
+### 灵感收集（inspiration）
 
-| 功能 | 说明 | 位置 |
-|------|------|------|
-| **灵感** | 突发灵感想法，命令 `灵感：xxx` | `~/Desktop/inspiration/` |
-| **代办** | 待办事项（进入收集箱），命令 `代办 xxx` | `~/Desktop/todo/` |
+**用途**：记录突发灵感想法
 
-### 沉淀系统
-
-| 功能 | 说明 | 位置 |
-|------|------|------|
-| **笔记** | 结构化知识库 | `~/Desktop/notes/` |
-| **任务** | 代码项目 | `~/Desktop/tasks/` |
-
-### 目录结构
-
+**使用方式**：
 ```
-~/Desktop/
-├── notes/          # 结构化知识库（VitePress + GitHub Pages）
-│   ├── tools/          # 工具使用指南
-│   ├── agent/          # Agent 相关笔记
-│   ├── llm/            # LLM 相关笔记
-│   └── projects/       # 项目记录
-├── tasks/          # 代码任务项目
-│   └── YYYY-MM-DD-任务名/
-|── todo/           # 待办管理
-│   ├── inbox.json      # 收集箱
-│   ├── daily/          # 每日待办
-│   └── history/        # 已完成历史
-└── inspiration/    # 灵感收集
-    ├── YYYY-MM-DD.md   # 今日灵感
-    └── status.json     # 灵感状态
+告诉 OpenClaw：灵感：xxx
+```
+
+**工作机制**：
+1. 用户说 `灵感：xxx` 时，自动记录到 `inspiration/YYYY-MM-DD.md`
+2. 同时更新 `inspiration/status.json` 跟踪状态
+3. 通过心跳机制定期检查，挑选合适的项目实现
+
+**状态流转**：
+```
+pending → in_progress → completed
+```
+
+**目录结构**：
+```
+~/Desktop/inspiration/
+├── 2026-02-27.md      # 每日灵感记录
+├── 2026-02-28.md      # ...
+└── status.json          # 灵感状态追踪
+```
+
+---
+
+### 待办管理（todo）
+
+**用途**：待办事项管理（GTD 风格）
+
+**使用方式**：
+```
+告诉 OpenClaw：代办 xxx
+```
+
+**工作机制**：
+1. 用户说 `代办 xxx` 时，先放入收集箱（inbox.json）
+2. 用户通过 `查看代办` 命令处理，设置日期和优先级
+3. 设置日期后自动移到对应日期的待办文件
+4. 完成后移到历史记录
+
+**状态流转**：
+```
+收集箱 → 今日待办 → 历史记录
+```
+
+**目录结构**：
+```
+~/Desktop/todo/
+├── inbox.json           # 收集箱（新待办）
+├── daily/               # 今日待办
+│   └── 2026-02-28.json
+├── history/             # 已完成历史
+│   └── 2026-02-27.json
+└── ...
+```
+
+---
+
+### 知识沉淀（notes）
+
+**用途**：结构化知识库，沉淀可复用知识
+
+**使用方式**：
+- 自动记录重要信息到 MEMORY.md
+- 手动创建笔记到 `~/Desktop/notes/`
+
+**工作机制**：
+1. 笔记采用 VitePress 构建
+2. 自动部署到 GitHub Pages
+3. 每次心跳时回顾近期记忆，提炼到长期记忆
+
+**目录结构**：
+```
+~/Desktop/notes/
+├── index.md              # 首页
+├── tools/                # 工具使用指南
+│   ├── openclaw/
+│   │   ├── openclaw-setup-guide.md
+│   │   ├── howto.md
+│   │   └── clawhub.md
+│   └── claude/
+├── agent/                # Agent 相关
+├── llm/                  # LLM 相关
+└── projects/             # 项目笔记
+```
+
+**命名规范**：
+- 文件名：kebab-case（如 `openclaw-setup-guide.md`）
+- 目录：按主题分子目录
+
+---
+
+### 任务项目（tasks）
+
+**用途**：代码项目的开发和任务跟踪
+
+**使用方式**：
+- 每个任务一个独立目录
+- 内层目录是真正的 git 仓库
+
+**目录结构**：
+```
+~/Desktop/tasks/
+└── 2026-02-27-doctranslator/    # 任务资料目录
+    ├── DESIGN.md                  # 技术方案
+    ├── docs/                     # 任务文档
+    └── doctranslator/             # 代码仓库（git）
+        ├── .git/
+        ├── src/
+        ├── package.json
+        └── ...
 ```
 
 ---
@@ -157,20 +240,33 @@ OpenClaw 帮你建立完整的信息管理闭环：
 | 角色 | 负责人 | 职责 |
 |------|--------|------|
 | **业务方** | 人类 | 提出需求和想法 |
-| **产品经理 + 架构师** | AI 助理 | 产品设计、技术架构、进度管控 |
+| **产品经理 + 架构师** | AI 助理 | 产品设计、技术架构、进度管控、功能验收 |
 | **程序员** | Claude Code | 代码实现 |
 
 ### 工作流程
 
 ```
-1. 需求阶段 → 2. 设计阶段 → 3. 开发阶段 → 4. 验收 → 5. 交付
+需求阶段 → 设计阶段 → 开发阶段 → 验收阶段 → 交付阶段
 ```
 
-### 技术细节
+**1. 需求阶段**
+- 人类提出需求
+- AI 与人类沟通，明确需求和验收标准
 
-- **启动方式**：`exec pty:true workdir:<项目目录> background:true command:"claude '任务'"`
-- **必须使用 pty:true**：Claude Code 是交互式终端应用
-- **进度监控**：`process action:log/poll` 查看输出
+**2. 设计阶段**
+- AI 进行产品和技术架构设计
+- 输出设计文档（DESIGN.md）
+
+**3. 开发阶段**
+- AI 启动 Claude Code 执行代码任务
+- Claude Code 自主解决技术问题
+
+**4. 验收阶段**
+- AI 验证功能是否满足验收标准
+
+**5. 交付阶段**
+- 完成交付或反馈问题
+- 上传到 GitHub
 
 ---
 
