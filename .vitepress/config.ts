@@ -5,7 +5,7 @@ export default defineConfig({
   description: 'Ty Chen 的结构化知识库',
   
   // GitHub Pages 部署配置
-  base: '/',
+  base: '/notes/',
   
   // 禁用 cleanUrls 以兼容 GitHub Pages
   cleanUrls: false,
