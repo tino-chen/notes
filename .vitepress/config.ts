@@ -6,7 +6,8 @@ export default defineConfig({
   
   // favicon
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }]
+    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/png' }]
   ],
   
   // GitHub Pages 部署配置
