@@ -94,4 +94,63 @@ my-skill/
 
 ---
 
+## 新手推荐的 10 个 Skills
+
+这份名单主打低风险、高实用、立竿见影。技能基本来自靠谱作者，安装量高、star多、恶意报告极少。
+
+> 参考：[最适合新手安装的10个小龙虾 skills](https://mp.weixin.qq.com/s/4lUgy1nW41-6jxoRKdszeQ)
+
+### 推荐列表
+
+| # | Skill | 功能 | 安装量 |
+|---|-------|------|--------|
+| 1 | **self-improving-agent** | 自我迭代/主动代理，让 Agent 记住错误、自我优化 | 46k+ |
+| 2 | **tavily-search** | 联网搜索（Tavily API 优化版），查实时信息 | 37k+ |
+| 3 | **gog** | Google Workspace CLI，Gmail/日历/Drive/Docs 全家桶 | 46k+ |
+| 4 | **github** | GitHub 集成（用 gh CLI），搜代码/管 issue/PR | 35k+ |
+| 5 | **summarize** | 总结 URL、PDF、图片、YouTube、音频 | 36k+ |
+| 6 | **find-skills** | 让 Agent 自己去 ClawHub 搜并推荐技能 | 社区推荐 |
+| 7 | **ontology** | 结构化记忆/知识图谱，让 Agent 真正"记住你" | 35k+ |
+| 8 | **weather** | 查天气，无需 API key，零配置 | 29k+ |
+| 9 | **proactive-agent** | 增加主动性，自己规划、迭代任务 | 社区推荐 |
+| 10 | **skill-vetter** | 安装前扫描技能代码、防恶意 | 安全必备 |
+
+### 安装命令
+
+```bash
+# 推荐安装顺序（安全优先）
+clawhub install skill-vetter        # 1. 安全扫描，先装这个
+clawhub install find-skills         # 2. 自动发现技能
+clawhub install tavily-search       # 3. 联网搜索
+clawhub install self-improving-agent # 4. 自我迭代
+clawhub install proactive-agent     # 5. 主动性
+clawhub install ontology            # 6. 记忆系统
+
+# 其他实用技能
+clawhub install gog                 # Google Workspace
+clawhub install github              # GitHub 集成
+clawhub install summarize           # 内容总结
+clawhub install weather             # 天气查询
+```
+
+### 安装位置
+
+- **新安装的 skills**：`~/.openclaw/workspace/skills/`
+- **系统自带的 skills**：`~/.nvm/.../openclaw/skills/`
+
+### 注意事项
+
+- ClawHub API 有**速率限制**，连续安装时会触发限流
+- 解决方法：在命令之间加 `sleep 5-15` 秒延迟
+- 示例：`sleep 10 && clawhub install <skill-name>`
+
+---
+
+## 参考链接
+
+- [ClawHub 官网](https://clawhub.com)
+- [最适合新手安装的10个小龙虾 skills](https://mp.weixin.qq.com/s/4lUgy1nW41-6jxoRKdszeQ)
+
+---
+
 *记录时间：2026-02-27*
