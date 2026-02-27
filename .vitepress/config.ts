@@ -6,7 +6,9 @@ export default defineConfig({
   
   // GitHub Pages 部署配置
   base: '/',
-  cleanUrls: true,
+  
+  // 禁用 cleanUrls 以兼容 GitHub Pages
+  cleanUrls: false,
   
   // 导航配置
   themeConfig: {
