@@ -4,10 +4,10 @@ export default defineConfig({
   title: "Tino's Notes",
   description: 'Ty Chen 的结构化知识库',
   
-  // favicon
+  // favicon - 添加版本号绕过缓存
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }],
-    ['link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/png' }]
+    ['link', { rel: 'icon', href: '/favicon.png?v=3', type: 'image/png' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon.png?v=3', type: 'image/png' }]
   ],
   
   // GitHub Pages 部署配置
