@@ -88,14 +88,14 @@
   color: var(--vp-c-text-1) !important;
 }
 
-/* 笔记链接 - 缩进 */
+/* 笔记链接 - 缩进，颜色稍浅 */
 .VPSidebarItem.is-link > .item {
   padding-left: 20px !important;
 }
 
 .VPSidebarItem.is-link > .item > .text {
   font-size: 14px !important;
-  color: var(--vp-c-text-2) !important;
+  color: var(--vp-c-text-3) !important;
 }
 
 /* 悬停效果 */
@@ -105,42 +105,45 @@
 
 /* ==================== 右侧目录样式 ==================== */
 
-/* 显示所有级别目录 */
+/* 目录标题 */
 .VPDocHasOutline .outline-title {
   font-size: 13px;
   font-weight: 600;
+  color: var(--vp-c-text-2);
 }
 
-/* 目录项 */
+/* 目录项基础 */
 .VPDocOutlineItem {
   padding-left: 0 !important;
 }
 
-/* 一级目录 */
+/* 一级目录 (h1) - 更大更醒目 */
 .VPDocOutlineItem.level-1 {
   font-size: 14px;
   font-weight: 500;
   margin-top: 8px;
+  color: var(--vp-c-text-1);
 }
 
-/* 二级目录 */
+/* 二级目录 (h2) - 与一级左对齐 */
 .VPDocOutlineItem.level-2 {
-  font-size: 13px;
-  padding-left: 12px !important;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 0 !important;
   color: var(--vp-c-text-2);
 }
 
-/* 三级目录 */
+/* 三级目录 (h3) - 与二级等大，有缩进 */
 .VPDocOutlineItem.level-3 {
-  font-size: 12px;
-  padding-left: 24px !important;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 16px !important;
   color: var(--vp-c-text-3);
 }
 
 /* 目录悬停效果 */
-.VPDocOutlineItem.level-2:hover,
-.VPDocOutlineItem.level-3:hover {
-  color: var(--vp-c-brand-1);
+.VPDocOutlineItem:hover {
+  color: var(--vp-c-brand-1) !important;
 }
 
 /* 暗色模式 */
