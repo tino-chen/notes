@@ -1,6 +1,5 @@
 <script setup>
 import { useData } from 'vitepress'
-import Giscus from '@giscus/vue'
 
 const { frontmatter } = useData()
 
@@ -24,19 +23,7 @@ const showFooter = () => {
     
     <!-- Giscus 评论 -->
     <div class="giscus-wrapper">
-      <Giscus
-        repo="tino-chen/notes"
-        repoId="R_kgDORaEpDg"
-        category="Comments"
-        categoryId="DIC_kwDORaEpDs4C3aXM"
-        mapping="pathname"
-        strict="0"
-        reactionsEnabled="1"
-        emitMetadata="0"
-        inputPosition="bottom"
-        theme="preferred_color_scheme"
-        lang="zh-CN"
-      />
+      <div class="giscus"></div>
     </div>
   </div>
 </template>
