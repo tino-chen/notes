@@ -21,10 +21,8 @@ const showFooter = () => {
       </span>
     </div>
     
-    <!-- Giscus 评论 -->
-    <div class="giscus-wrapper">
-      <div class="giscus"></div>
-    </div>
+    <!-- Giscus 评论容器 -->
+    <div class="giscus"></div>
   </div>
 </template>
 
@@ -48,7 +46,7 @@ const showFooter = () => {
   color: var(--vp-c-divider);
 }
 
-.giscus-wrapper {
+.giscus {
   margin-top: 30px;
 }
 </style>
