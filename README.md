@@ -23,7 +23,7 @@ notes/
 
 ## 导航顺序
 
-1. **Agent** — Agent 架构、设计模式、Memory、Context、RAG 等
+1. **Agent** — Agent 范式、RAG、Memory、Context 等
 2. **LLM** — 预训练、后训练、评测等
 3. **Tool** — AI 助手、AI 编程工具等
 4. **Project** — 项目笔记
@@ -59,18 +59,6 @@ title: 标题
 tags: [tag1, tag2]
 ---
 ```
-
----
-
-## 索引
-
-### Tool
-
-- [OpenClaw 安装配置](./tool/ai-assistant/openclaw-setup.md)
-- [OpenClaw 高效使用](./tool/ai-assistant/openclaw-usage.md)
-- [供应商和模型切换指南](./tool/ai-assistant/model-provider.md)
-- [ClawHub 使用指南](./tool/ai-assistant/clawhub.md)
-- [Claude Code 安装配置](./tool/ai-coding/claude-code-setup.md)
 
 ---
 
