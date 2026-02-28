@@ -21,49 +21,30 @@ export default defineConfig({
     siteTitle: "Tino's Notes",
     
     nav: [
-      { text: '首页', link: '/' },
-      { text: '工具', link: '/tools/' },
       { text: 'Agent', link: '/agent/' },
       { text: 'LLM', link: '/llm/' },
-      { text: '项目', link: '/projects/' },
+      { text: 'Tool', link: '/tool/' },
+      { text: 'Project', link: '/project/' },
     ],
     
     sidebar: {
-      '/tools/': [
+      '/tool/': [
         {
-          text: 'OpenClaw',
+          text: 'AI Assistant',
           collapsed: false,
           items: [
-            { text: 'OpenClaw 安装配置', link: '/tools/openclaw/openclaw-setup-guide' },
-            { text: 'OpenClaw 高效使用', link: '/tools/openclaw/howto' },
-            { text: '供应商和模型切换指南', link: '/tools/openclaw/model-provider' },
-            { text: 'ClawHub 使用指南', link: '/tools/openclaw/clawhub' },
+            { text: 'OpenClaw 安装配置', link: '/tool/ai-assistant/openclaw-setup' },
+            { text: 'OpenClaw 高效使用', link: '/tool/ai-assistant/openclaw-usage' },
+            { text: '供应商和模型切换指南', link: '/tool/ai-assistant/model-provider' },
+            { text: 'ClawHub 使用指南', link: '/tool/ai-assistant/clawhub' },
           ]
         },
         {
-          text: 'Claude',
+          text: 'AI Coding',
           collapsed: false,
           items: [
-            { text: 'Claude Code 安装配置', link: '/tools/claude/claude-code-setup-guide' },
+            { text: 'Claude Code 安装配置', link: '/tool/ai-coding/claude-code-setup' },
           ]
-        }
-      ],
-      '/agent/': [
-        {
-          text: 'Agent 相关',
-          items: []
-        }
-      ],
-      '/llm/': [
-        {
-          text: 'LLM 相关',
-          items: []
-        }
-      ],
-      '/projects/': [
-        {
-          text: '项目笔记',
-          items: []
         }
       ],
     },

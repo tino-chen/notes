@@ -4,32 +4,32 @@ layout: home
 hero:
   name: "Tino's Notes"
   text: "结构化知识库"
-  tagline: Ty Chen 的个人笔记，沉淀与 AI 助手 Tino 协作中产生的可复用知识
+  tagline: Ty Chen 的个人笔记，沉淀与 AI 协作中产生的可复用知识
   actions:
     - theme: brand
       text: 开始阅读
-      link: /tools/
+      link: /tool/
     - theme: alt
       text: GitHub
       link: https://github.com/tino-chen/notes
 
 features:
-  - icon: 🛠️
-    title: 工具笔记
-    details: 各种工具的使用指南和最佳实践
-    link: /tools/
   - icon: 🤖
-    title: Agent 相关
-    details: AI Agent 开发和应用相关笔记
+    title: Agent
+    details: AI Agent 架构、设计模式、Memory、Context 等
     link: /agent/
   - icon: 🧠
-    title: LLM 相关
-    details: 大语言模型相关技术和研究
+    title: LLM
+    details: 大语言模型预训练、后训练、评测等
     link: /llm/
+  - icon: 🛠️
+    title: Tool
+    details: AI 助手、编程工具的使用指南
+    link: /tool/
   - icon: 📦
-    title: 项目笔记
+    title: Project
     details: 项目开发过程中的经验总结
-    link: /projects/
+    link: /project/
 ---
 
 <style>

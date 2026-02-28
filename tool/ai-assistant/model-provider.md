@@ -1,20 +1,35 @@
+---
+type: guide
+title: 供应商和模型切换指南
+tags: [openclaw, model, provider, llm]
+---
+
 # 供应商和模型切换指南
 
 本文档介绍如何在 OpenClaw 中切换模型供应商和模型。
 
 ---
 
-## 第一步：切换/添加供应商
+## 概述
 
-### 方法 A：使用 onboard 向导（推荐新手）
+OpenClaw 支持多种 LLM 供应商，需要了解如何添加供应商和切换模型。
+
+## 前置条件
+
+- 已安装 OpenClaw
+- 拥有供应商的 API Key
+
+## 步骤
+
+### Step 1: 切换/添加供应商
+
+#### 方法 A：使用 onboard 向导（推荐）
 
 ```bash
 openclaw onboard
 ```
 
-然后按提示选择供应商并输入 API Key。
-
-### 方法 B：非交互式添加供应商
+#### 方法 B：非交互式添加
 
 **添加 Anthropic：**
 ```bash
@@ -47,20 +62,7 @@ openclaw onboard --non-interactive \
   --custom-compatibility openai
 ```
 
-### 方法 C：使用 models auth 登录
-
-```bash
-# 查看可用供应商插件
-openclaw plugins list
-
-# OAuth 登录（如支持）
-openclaw models auth login --provider anthropic
-
-# 粘贴 API Token
-openclaw models auth paste-token
-```
-
-### 方法 D：手动编辑配置文件
+#### 方法 C：手动编辑配置文件
 
 编辑 `~/.openclaw/agents/main/agent/models.json`：
 
@@ -90,11 +92,9 @@ openclaw models auth paste-token
 }
 ```
 
----
+### Step 2: 切换模型
 
-## 第二步：切换模型
-
-### 方法 A：命令行切换
+#### 方法 A：命令行切换
 
 ```bash
 # 查看当前状态
@@ -103,40 +103,17 @@ openclaw models status
 # 列出可用模型
 openclaw models list
 
-# 切换到 Claude
+# 切换到指定模型
 openclaw models set anthropic/claude-opus-4-6
-
-# 切换到 GPT-4o
 openclaw models set openai/gpt-4o
-
-# 切换到 GLM-5
 openclaw models set zai/glm-5
 ```
 
-### 方法 B：配置文件
+#### 方法 B：对话中切换
 
-编辑配置，设置默认模型：
+发送：`/model anthropic/claude-opus-4-6`
 
-```json5
-{
-  agents: { 
-    defaults: { 
-      model: { primary: "anthropic/claude-opus-4-6" } 
-    } 
-  }
-}
-```
-
-### 方法 C：对话中切换
-
-在对话中发送：
-```
-/model anthropic/claude-opus-4-6
-```
-
----
-
-## 常用供应商配置示例
+## 常用供应商
 
 | 供应商 | Provider ID | 模型示例 |
 |--------|-------------|----------|
@@ -144,25 +121,7 @@ openclaw models set zai/glm-5
 | OpenAI | `openai` | `openai/gpt-4o` |
 | Z.AI (GLM) | `zai` | `zai/glm-5` |
 | OpenRouter | `openrouter` | `openrouter/anthropic/claude-opus-4` |
-| Mistral | `mistral` | `mistral/mistral-large` |
 | Ollama (本地) | `ollama` | `ollama/llama3` |
-
----
-
-## 查看当前配置
-
-```bash
-# 查看模型状态和认证信息
-openclaw models status
-
-# 查看认证配置
-cat ~/.openclaw/agents/main/agent/models.json
-
-# 查看 OpenClaw 状态
-openclaw status
-```
-
----
 
 ## 常用命令速查
 
@@ -171,11 +130,19 @@ openclaw status
 | `openclaw models status` | 查看当前模型状态 |
 | `openclaw models list` | 列出所有可用模型 |
 | `openclaw models set <model>` | 设置默认模型 |
-| `openclaw models scan` | 扫描可用模型 |
 | `openclaw models auth login --provider <id>` | 登录供应商 |
 | `openclaw onboard` | 交互式配置向导 |
 
+## 常见问题
+
+| 问题 | 解决方案 |
+|------|----------|
+| 模型切换不生效 | 检查 models.json 格式 |
+| API 调用失败 | 检查 API Key 和代理配置 |
+| 供应商不支持 | 检查是否在支持列表中 |
+
 ---
 
-*参考来源：OpenClaw 官方文档*
-*记录时间：2026-02-27*
+## 参考资料
+
+- [OpenClaw 官方文档](https://docs.openclaw.ai)
