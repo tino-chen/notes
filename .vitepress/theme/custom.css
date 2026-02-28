@@ -88,9 +88,9 @@
   color: var(--vp-c-text-1) !important;
 }
 
-/* 笔记链接 - 缩进，颜色稍浅 */
+/* 笔记链接 - 缩进减小，颜色稍浅 */
 .VPSidebarItem.is-link > .item {
-  padding-left: 20px !important;
+  padding-left: 12px !important;
 }
 
 .VPSidebarItem.is-link > .item > .text {
@@ -130,22 +130,22 @@
   padding-left: 0 !important;
 }
 
-/* 一级目录 (h1) - 加粗 */
+/* 一级目录 (h1) - 最粗最醒目 */
 .VPDocHasOutline a.level-1 {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: var(--vp-c-text-1) !important;
   font-size: 14px !important;
 }
 
-/* 二级目录 (h2) - 不加粗 */
+/* 二级目录 (h2) - 中等粗细 */
 .VPDocHasOutline a.level-2 {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   color: var(--vp-c-text-2) !important;
   font-size: 14px !important;
   padding-left: 0 !important;
 }
 
-/* 三级目录 (h3) - 不加粗，有缩进 */
+/* 三级目录 (h3) - 最细，有缩进 */
 .VPDocHasOutline a.level-3 {
   font-weight: 400 !important;
   color: var(--vp-c-text-3) !important;
