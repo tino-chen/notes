@@ -40,6 +40,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'OpenClaw 安装配置', link: '/tool/ai-assistant/openclaw-setup' },
+            { text: 'OpenClaw CLI 使用指南', link: '/tool/ai-assistant/openclaw-cli-usage' },
             { text: 'OpenClaw 高效使用', link: '/tool/ai-assistant/openclaw-usage' },
             { text: '供应商和模型切换指南', link: '/tool/ai-assistant/model-provider' },
             { text: 'ClawHub 使用指南', link: '/tool/ai-assistant/clawhub' },
