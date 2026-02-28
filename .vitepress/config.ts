@@ -60,6 +60,11 @@ export default defineConfig({
       copyright: 'Copyright © 2026 Ty Chen'
     },
     
+    outline: {
+      level: [1, 3],
+      label: '目录'
+    },
+    
     search: {
       provider: 'local'
     }
