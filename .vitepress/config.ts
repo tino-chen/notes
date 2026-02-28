@@ -35,8 +35,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'OpenClaw 安装配置', link: '/tools/openclaw/openclaw-setup-guide' },
-            { text: '如何使用 OpenClaw？', link: '/tools/openclaw/howto' },
-            { text: '切换供应商和模型', link: '/tools/openclaw/model-provider' },
+            { text: 'OpenClaw 高效使用', link: '/tools/openclaw/howto' },
+            { text: '供应商和模型切换指南', link: '/tools/openclaw/model-provider' },
             { text: 'ClawHub 使用指南', link: '/tools/openclaw/clawhub' },
           ]
         },
