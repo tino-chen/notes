@@ -8,10 +8,18 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
-  "keywords": ["notes", "knowledge-base", "vitepress"],
+  "keywords": [
+    "notes",
+    "knowledge-base",
+    "vitepress"
+  ],
   "author": "Ty Chen",
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "@giscus/vue": "^3.1.1",
+    "giscus": "^1.6.0"
   }
 }

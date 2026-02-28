@@ -1,10 +1,9 @@
 <script setup>
-import { onMounted } from 'vue'
 import { useData } from 'vitepress'
+import Giscus from '@giscus/vue'
 
 const { frontmatter } = useData()
 
-// 只在文章详情页显示
 const showFooter = () => {
   return frontmatter.value.type && frontmatter.value.title
 }
@@ -15,17 +14,29 @@ const showFooter = () => {
     <!-- 访问量 -->
     <div class="page-views">
       <span id="busuanzi_container_page_pv">
-        👀 总访问 <span id="busuanzi_value_page_pv">-</span> 次
+        👀 总访问 <span id="busuanzi_value_page_pv">...</span> 次
       </span>
       <span class="separator">|</span>
       <span id="busuanzi_container_site_uv">
-        👤 访客 <span id="busuanzi_value_site_uv">-</span> 人
+        👤 访客 <span id="busuanzi_value_site_uv">...</span> 人
       </span>
     </div>
     
     <!-- Giscus 评论 -->
     <div class="giscus-wrapper">
-      <div class="giscus"></div>
+      <Giscus
+        repo="tino-chen/notes"
+        repoId="R_kgDORaEpDg"
+        category="Comments"
+        categoryId="DIC_kwDORaEpDs4C3aXM"
+        mapping="pathname"
+        strict="0"
+        reactionsEnabled="1"
+        emitMetadata="0"
+        inputPosition="bottom"
+        theme="preferred_color_scheme"
+        lang="zh-CN"
+      />
     </div>
   </div>
 </template>
