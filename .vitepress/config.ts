@@ -21,6 +21,7 @@ export default defineConfig({
     siteTitle: "Tino's Notes",
     
     nav: [
+      { text: 'Home', link: '/' },
       { text: 'Agent', link: '/agent/' },
       { text: 'LLM', link: '/llm/' },
       { text: 'Tool', link: '/tool/' },
