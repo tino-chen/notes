@@ -105,58 +105,37 @@
 
 /* ==================== 右侧目录样式 ==================== */
 
-/* 目录容器 */
-.VPDocHasOutline .outline-container {
-  font-size: 14px;
-}
-
 /* 目录标题 */
-.VPDocHasOutline .outline-title {
+.VPDocAsideOutline .outline-title {
   font-size: 13px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-2) !important;
-  margin-bottom: 8px;
 }
 
-/* 目录链接基础样式 */
-.VPDocHasOutline a {
+/* 一级目录 (root) - 最粗最醒目 */
+.VPDocOutlineItem.root > li > .outline-link.outline-link {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+/* 二级目录 (nested) - 中等粗细 */
+.VPDocOutlineItem.nested > li > .outline-link.outline-link {
   font-size: 14px !important;
   font-weight: 400 !important;
   color: var(--vp-c-text-2) !important;
-  display: block;
-  padding: 3px 0 3px 0;
-  border-left: 2px solid transparent;
-  margin-left: 0;
-  padding-left: 0 !important;
 }
 
-/* 一级目录 (h1) - 最粗最醒目 */
-.VPDocHasOutline a.level-1 {
-  font-weight: 700 !important;
-  color: var(--vp-c-text-1) !important;
-  font-size: 14px !important;
-}
-
-/* 二级目录 (h2) - 中等粗细 */
-.VPDocHasOutline a.level-2 {
-  font-weight: 500 !important;
-  color: var(--vp-c-text-2) !important;
-  font-size: 14px !important;
-  padding-left: 0 !important;
-}
-
-/* 三级目录 (h3) - 最细，有缩进 */
-.VPDocHasOutline a.level-3 {
+/* 三级目录 (nested nested) - 最细，有缩进 */
+.VPDocOutlineItem.nested .VPDocOutlineItem.nested > li > .outline-link.outline-link {
+  font-size: 13px !important;
   font-weight: 400 !important;
   color: var(--vp-c-text-3) !important;
-  font-size: 14px !important;
-  padding-left: 16px !important;
 }
 
 /* 目录链接悬停 */
-.VPDocHasOutline a:hover {
+.VPDocOutlineItem .outline-link:hover {
   color: var(--vp-c-brand-1) !important;
-  border-left-color: var(--vp-c-brand-1);
 }
 
 /* 暗色模式 */
