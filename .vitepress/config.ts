@@ -4,10 +4,10 @@ export default defineConfig({
   title: "Tino's Notes",
   description: 'Ty Chen 的结构化知识库',
   
-  // favicon - 使用小尺寸图片
+  // favicon
   head: [
-    ['link', { rel: 'icon', href: '/favicon32.png?v=4', type: 'image/png', sizes: '32x32' }],
-    ['link', { rel: 'shortcut icon', href: '/favicon32.png?v=4', type: 'image/png' }]
+    ['link', { rel: 'icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }]
   ],
   
   // GitHub Pages 部署配置
