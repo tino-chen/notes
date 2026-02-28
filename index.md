@@ -16,7 +16,7 @@ hero:
 features:
   - icon: 🤖
     title: Agent
-    details: AI Agent 架构、设计模式、Memory、Context 等
+    details: Agent 范式、RAG、Memory、Context 等
     link: /agent/
   - icon: 🧠
     title: LLM
