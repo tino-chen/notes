@@ -7,7 +7,13 @@ export default defineConfig({
   // favicon
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }],
-    ['link', { rel: 'shortcut icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }]
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }],
+    
+    // 不蒜子访问量统计
+    ['script', { src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async: 'async' }],
+    
+    // Giscus 评论系统
+    ['script', { src: 'https://giscus.app/client.js', async: '', 'data-repo': 'tino-chen/notes', 'data-repo-id': 'R_kgDOEqJJ2w', 'data-category': 'Comments', 'data-category-id': 'DIC_kwDOEqJJ284CR-F9', 'data-mapping': 'pathname', 'data-strict': '0', 'data-reactions-enabled': '1', 'data-emit-metadata': '0', 'data-input-position': 'bottom', 'data-theme': 'light', 'data-lang': 'zh-CN', crossorigin: 'anonymous' }]
   ],
   
   // GitHub Pages 部署配置
@@ -60,6 +66,19 @@ export default defineConfig({
     
     search: {
       provider: 'local'
+    }
+  },
+  
+  // Markdown 配置
+  markdown: {
+    // 添加自定义容器来显示元数据和评论
+    container: {
+      renderTypes: {
+        info: true,
+        tip: true,
+        warning: true,
+        danger: true
+      }
     }
   }
 })
