@@ -5,6 +5,9 @@ hero:
   name: "Tino's Notes"
   text: "结构化知识库"
   tagline: Ty Chen 的个人笔记，沉淀与 AI 协作中产生的可复用知识
+  image:
+    src: /Tino.png
+    alt: Tino Avatar
   actions:
     - theme: brand
       text: 开始阅读
