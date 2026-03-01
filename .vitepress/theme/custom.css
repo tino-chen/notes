@@ -1,6 +1,5 @@
-/* Tino's Notes 主题系统 - 默认龙虾红 */
+/* Tino's Notes 主题系统 - 龙虾红 */
 
-/* 龙虾红主题 */
 :root {
   --vp-c-brand-1: #ff5c5c;
   --vp-c-brand-2: #ff7070;
@@ -21,97 +20,20 @@
 }
 
 /* 功能卡片 */
-.VPFeature {
-  transition: all 0.3s ease;
-}
-
 .VPFeature:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-.VPFeature .icon {
-  font-size: 2em;
-}
-
-/* 导航栏 */
-.VPNavBar {
-  backdrop-filter: blur(12px);
-}
-
-/* 按钮样式 */
+/* 按钮 */
 .VPButton.brand {
   background: linear-gradient(120deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
   border: none;
 }
 
-.VPButton.brand:hover {
-  background: linear-gradient(120deg, var(--vp-c-brand-2) 0%, var(--vp-c-brand-3) 100%);
-}
-
-/* 搜索框 */
-.DocSearch-Button {
-  border-radius: 8px;
-}
-
-/* 页面内容 */
-.vp-doc {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* 链接样式 */
+/* 链接 */
 .vp-doc a {
   color: var(--vp-c-brand-1);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.vp-doc a:hover {
-  border-bottom-color: var(--vp-c-brand-1);
-}
-
-/* 代码块 */
-.vp-doc pre {
-  border-radius: 8px;
-  background: #1e1e1e;
-}
-
-/* 侧边栏 */
-.VPSidebarItem.is-group > .item > .text {
-  font-size: 15px !important;
-  font-weight: 600 !important;
-}
-
-.VPSidebarItem.is-link > .item {
-  padding-left: 12px !important;
-}
-
-.VPSidebarItem.is-link > .item > .text {
-  font-size: 14px !important;
-  color: var(--vp-c-text-3) !important;
-}
-
-.VPSidebarItem.is-link > .item:hover > .text {
-  color: var(--vp-c-brand-1) !important;
-}
-
-/* 目录 */
-.VPDocAsideOutline .outline-title {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: var(--vp-c-text-2) !important;
-}
-
-.VPDocOutlineItem.root > li > .outline-link {
-  font-size: 14px !important;
-  font-weight: 600 !important;
-}
-
-.VPDocOutlineItem .outline-link:hover {
-  color: var(--vp-c-brand-1) !important;
 }
 
 /* 暗色模式 */

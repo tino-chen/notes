@@ -23,6 +23,18 @@ export default defineConfig({
       { text: 'Project', link: '/project/' },
     ],
     
+    sidebar: {
+      '/tool/': [
+        {
+          text: 'Network',
+          collapsed: false,
+          items: [
+            { text: 'Tailscale - 如何远程连接 Mac Mini ?', link: '/tool/network/tailscale-remote-connect' },
+          ]
+        }
+      ],
+    },
+    
     socialLinks: [
       { icon: 'github', link: 'https://github.com/tino-chen/notes' }
     ],
