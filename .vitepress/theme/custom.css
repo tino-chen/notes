@@ -1,16 +1,85 @@
-/* 自定义样式 */
+/* Tino's Notes 主题系统 - 支持多套颜色主题 */
 
 :root {
-  /* 主题色 - 龙虾红 */
+  /* 默认主题：龙虾红 */
+  --theme-primary: #ff5c5c;
+  --theme-secondary: #ff9a5c;
+  --theme-name: "lobster";
+}
+
+/* ==================== 主题定义 ==================== */
+
+/* 龙虾红 - 默认主题 */
+[data-theme="lobster"] {
   --vp-c-brand-1: #ff5c5c;
   --vp-c-brand-2: #ff7070;
   --vp-c-brand-3: #ff9a5c;
   --vp-c-brand-soft: rgba(255, 92, 92, 0.14);
-  
-  /* 渐变背景 */
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ff5c5c 30%, #ff9a5c);
   --vp-home-hero-image-background-image: linear-gradient(-45deg, #ff5c5c50 50%, #ff9a5c50 50%);
 }
+
+/* 海洋蓝 */
+[data-theme="ocean"] {
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #60a5fa;
+  --vp-c-brand-3: #06b6d4;
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.14);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3b82f6 30%, #06b6d4);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #3b82f650 50%, #06b6d450 50%);
+}
+
+/* 薄荷绿 */
+[data-theme="mint"] {
+  --vp-c-brand-1: #10b981;
+  --vp-c-brand-2: #34d399;
+  --vp-c-brand-3: #6ee7b7;
+  --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #10b981 30%, #6ee7b7);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #10b98150 50%, #6ee7b750 50%);
+}
+
+/* 紫罗兰 */
+[data-theme="violet"] {
+  --vp-c-brand-1: #8b5cf6;
+  --vp-c-brand-2: #a78bfa;
+  --vp-c-brand-3: #c4b5fd;
+  --vp-c-brand-soft: rgba(139, 92, 246, 0.14);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #8b5cf6 30%, #c4b5fd);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #8b5cf650 50%, #c4b5fd50 50%);
+}
+
+/* 琥珀橙 */
+[data-theme="amber"] {
+  --vp-c-brand-1: #f59e0b;
+  --vp-c-brand-2: #fbbf24;
+  --vp-c-brand-3: #fcd34d;
+  --vp-c-brand-soft: rgba(245, 158, 11, 0.14);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #f59e0b 30%, #fcd34d);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #f59e0b50 50%, #fcd34d50 50%);
+}
+
+/* 玫瑰粉 */
+[data-theme="rose"] {
+  --vp-c-brand-1: #ec4899;
+  --vp-c-brand-2: #f472b6;
+  --vp-c-brand-3: #f9a8d4;
+  --vp-c-brand-soft: rgba(236, 72, 153, 0.14);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ec4899 30%, #f9a8d4);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #ec489950 50%, #f9a8d450 50%);
+}
+
+/* 石墨灰 */
+[data-theme="graphite"] {
+  --vp-c-brand-1: #6b7280;
+  --vp-c-brand-2: #9ca3af;
+  --vp-c-brand-3: #d1d5db;
+  --vp-c-brand-soft: rgba(107, 114, 128, 0.14);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6b7280 30%, #d1d5db);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #6b728050 50%, #d1d5db50 50%);
+}
+
+/* ==================== 通用样式 ==================== */
 
 /* 首页 Hero 区域 */
 .VPHero .name {
@@ -41,12 +110,12 @@
 
 /* 按钮样式 */
 .VPButton.brand {
-  background: linear-gradient(120deg, #ff5c5c 0%, #ff9a5c 100%);
+  background: linear-gradient(120deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
   border: none;
 }
 
 .VPButton.brand:hover {
-  background: linear-gradient(120deg, #ff7070 0%, #ffb070 100%);
+  background: linear-gradient(120deg, var(--vp-c-brand-2) 0%, var(--vp-c-brand-3) 100%);
 }
 
 /* 搜索框 */
@@ -81,14 +150,14 @@
 
 /* ==================== 侧边栏样式 ==================== */
 
-/* 分组标题 - 更大更醒目 */
+/* 分组标题 */
 .VPSidebarItem.is-group > .item > .text {
   font-size: 15px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-1) !important;
 }
 
-/* 笔记链接 - 缩进减小，颜色稍浅 */
+/* 笔记链接 */
 .VPSidebarItem.is-link > .item {
   padding-left: 12px !important;
 }
@@ -98,47 +167,66 @@
   color: var(--vp-c-text-3) !important;
 }
 
-/* 悬停效果 */
 .VPSidebarItem.is-link > .item:hover > .text {
   color: var(--vp-c-brand-1) !important;
 }
 
 /* ==================== 右侧目录样式 ==================== */
 
-/* 目录标题 */
 .VPDocAsideOutline .outline-title {
   font-size: 13px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-2) !important;
 }
 
-/* 一级目录 (root) - 加粗 */
 .VPDocOutlineItem.root > li > .outline-link.outline-link {
   font-size: 14px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-1) !important;
 }
 
-/* 二级目录 (nested) - 正常黑不加粗 */
 .VPDocOutlineItem.nested > li > .outline-link.outline-link {
   font-size: 14px !important;
   font-weight: 400 !important;
   color: var(--vp-c-text-1) !important;
 }
 
-/* 三级目录 (nested nested) - 比正常黑浅一点 */
 .VPDocOutlineItem.nested .VPDocOutlineItem.nested > li > .outline-link.outline-link {
   font-size: 13px !important;
   font-weight: 400 !important;
   color: var(--vp-c-text-2) !important;
 }
 
-/* 目录链接悬停 */
 .VPDocOutlineItem .outline-link:hover {
   color: var(--vp-c-brand-1) !important;
 }
 
-/* 暗色模式 */
-.dark {
+/* ==================== 暗色模式 ==================== */
+
+[data-theme="lobster"].dark {
   --vp-c-brand-soft: rgba(255, 92, 92, 0.24);
+}
+
+[data-theme="ocean"].dark {
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.24);
+}
+
+[data-theme="mint"].dark {
+  --vp-c-brand-soft: rgba(16, 185, 129, 0.24);
+}
+
+[data-theme="violet"].dark {
+  --vp-c-brand-soft: rgba(139, 92, 246, 0.24);
+}
+
+[data-theme="amber"].dark {
+  --vp-c-brand-soft: rgba(245, 158, 11, 0.24);
+}
+
+[data-theme="rose"].dark {
+  --vp-c-brand-soft: rgba(236, 72, 153, 0.24);
+}
+
+[data-theme="graphite"].dark {
+  --vp-c-brand-soft: rgba(107, 114, 128, 0.24);
 }
