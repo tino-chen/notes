@@ -6,8 +6,8 @@ export default defineConfig({
   
   // favicon
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }],
-    ['link', { rel: 'shortcut icon', href: '/favicon.ico?v=4', type: 'image/x-icon' }]
+    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/favicon.png' }]
   ],
   
   // GitHub Pages 部署配置
