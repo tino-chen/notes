@@ -13,7 +13,10 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'doc-top': () => h(ArticleMeta),
-      'nav-bar-content-after': () => h(ThemeButton),
+      // 主题按钮放在导航和深色模式切换之间
+      'nav-bar-content-after': () => [
+        h(ThemeButton),
+      ],
     })
   }
 }

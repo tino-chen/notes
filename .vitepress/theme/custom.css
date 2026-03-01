@@ -1,4 +1,4 @@
-/* Tino's Notes 主题系统 - 支持多套颜色主题 */
+/* Tino's Notes 主题系统 */
 
 :root {
   --theme-primary: #ff5c5c;
@@ -7,13 +7,12 @@
 
 /* ==================== 主题定义 ==================== */
 
-/* 龙虾红 - 默认主题 */
+/* 龙虾红 - 默认 */
 [data-theme="lobster"] {
   --vp-c-brand-1: #ff5c5c;
   --vp-c-brand-2: #ff7070;
   --vp-c-brand-3: #ff9a5c;
   --vp-c-brand-soft: rgba(255, 92, 92, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ff5c5c 30%, #ff9a5c);
 }
 
 /* 海洋蓝 */
@@ -22,7 +21,6 @@
   --vp-c-brand-2: #60a5fa;
   --vp-c-brand-3: #06b6d4;
   --vp-c-brand-soft: rgba(59, 130, 246, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3b82f6 30%, #06b6d4);
 }
 
 /* 薄荷绿 */
@@ -31,7 +29,6 @@
   --vp-c-brand-2: #34d399;
   --vp-c-brand-3: #6ee7b7;
   --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #10b981 30%, #6ee7b7);
 }
 
 /* 紫罗兰 */
@@ -40,7 +37,6 @@
   --vp-c-brand-2: #a78bfa;
   --vp-c-brand-3: #c4b5fd;
   --vp-c-brand-soft: rgba(139, 92, 246, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #8b5cf6 30%, #c4b5fd);
 }
 
 /* 琥珀橙 */
@@ -49,7 +45,6 @@
   --vp-c-brand-2: #fbbf24;
   --vp-c-brand-3: #fcd34d;
   --vp-c-brand-soft: rgba(245, 158, 11, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #f59e0b 30%, #fcd34d);
 }
 
 /* 玫瑰粉 */
@@ -58,7 +53,6 @@
   --vp-c-brand-2: #f472b6;
   --vp-c-brand-3: #f9a8d4;
   --vp-c-brand-soft: rgba(236, 72, 153, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #ec4899 30%, #f9a8d4);
 }
 
 /* 石墨灰 */
@@ -67,14 +61,13 @@
   --vp-c-brand-2: #9ca3af;
   --vp-c-brand-3: #d1d5db;
   --vp-c-brand-soft: rgba(107, 114, 128, 0.14);
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6b7280 30%, #d1d5db);
 }
 
-/* ==================== 首页标题颜色 ==================== */
+/* ==================== 首页标题渐变 ==================== */
 
-/* 首页 Hero 标题 - 渐变彩色 */
+/* 首页 Hero 标题 - 使用 CSS 变量实现主题渐变 */
 .VPHero .name {
-  background: var(--vp-home-hero-name-background);
+  background: linear-gradient(120deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-3));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -119,7 +112,7 @@
   border-radius: 8px;
 }
 
-/* 页面内容区域 */
+/* 页面内容 */
 .vp-doc {
   max-width: 800px;
   margin: 0 auto;
@@ -138,17 +131,16 @@
   border-bottom-color: var(--vp-c-brand-1);
 }
 
-/* 代码块样式 */
+/* 代码块 */
 .vp-doc pre {
   border-radius: 8px;
   background: #1e1e1e;
 }
 
-/* 侧边栏样式 */
+/* 侧边栏 */
 .VPSidebarItem.is-group > .item > .text {
   font-size: 15px !important;
   font-weight: 600 !important;
-  color: var(--vp-c-text-1) !important;
 }
 
 .VPSidebarItem.is-link > .item {
@@ -164,29 +156,16 @@
   color: var(--vp-c-brand-1) !important;
 }
 
-/* 右侧目录样式 */
+/* 目录 */
 .VPDocAsideOutline .outline-title {
   font-size: 13px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-2) !important;
 }
 
-.VPDocOutlineItem.root > li > .outline-link.outline-link {
+.VPDocOutlineItem.root > li > .outline-link {
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: var(--vp-c-text-1) !important;
-}
-
-.VPDocOutlineItem.nested > li > .outline-link.outline-link {
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  color: var(--vp-c-text-1) !important;
-}
-
-.VPDocOutlineItem.nested .VPDocOutlineItem.nested > li > .outline-link.outline-link {
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: var(--vp-c-text-2) !important;
 }
 
 .VPDocOutlineItem .outline-link:hover {
@@ -205,3 +184,21 @@
 [data-theme="amber"].dark { --vp-c-brand-soft: rgba(245, 158, 11, 0.24); }
 [data-theme="rose"].dark { --vp-c-brand-soft: rgba(236, 72, 153, 0.24); }
 [data-theme="graphite"].dark { --vp-c-brand-soft: rgba(107, 114, 128, 0.24); }
+
+/* ==================== 主题按钮位置调整 ==================== */
+
+/* 导航栏按钮容器 - 添加竖线分隔 */
+.VPNavBar .content-body {
+  gap: 8px;
+}
+
+/* 在搜索框后添加竖线 */
+.VPNavBarSearch::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 24px;
+  background: var(--vp-c-divider);
+  margin: 0 12px;
+  vertical-align: middle;
+}
