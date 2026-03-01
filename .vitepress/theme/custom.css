@@ -5,6 +5,30 @@
   --vp-c-brand-2: #ff7070;
   --vp-c-brand-3: #ff9a5c;
   --vp-c-brand-soft: rgba(255, 92, 92, 0.14);
+
+  /* 增加左侧边栏宽度，避免笔记标题换行 */
+  --vp-sidebar-width: 320px;
+}
+
+/* 右侧目录加宽并允许换行，避免显示省略号 */
+@media (min-width: 1280px) {
+  .VPDoc .aside {
+    max-width: 440px;
+  }
+  .VPDoc .aside-container {
+    width: 420px;
+  }
+}
+
+.outline-link {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 28px !important;
+}
+
+.outline-link:hover {
+  color: var(--vp-c-brand-1) !important;
 }
 
 /* 首页标题 */

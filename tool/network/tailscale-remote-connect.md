@@ -31,16 +31,16 @@ Tailscale 是一款基于 WireGuard 协议的虚拟组网工具，它能够：
 | 跨平台 | 支持 macOS、Windows、Linux、iOS、Android |
 | 简单易用 | 安装即用，无需复杂配置 |
 
-## 工作原理
+### 工作原理
 
-### 1. WireGuard 协议
+#### 1. WireGuard 协议
 
 Tailscale 基于 **WireGuard** 协议，这是一个现代化的 VPN 协议：
 - 比 OpenVPN、IPSec 更轻量、更快
 - 使用 Curve25519 进行密钥交换
 - ChaCha20-Poly1305 进行数据加密
 
-### 2. NAT 穿透
+#### 2. NAT 穿透
 
 Tailscale 能够自动穿透 NAT 和防火墙：
 
@@ -48,7 +48,7 @@ Tailscale 能够自动穿透 NAT 和防火墙：
 2. **ICE** - 尝试多种连接方式（P2P、中继）
 3. **DERP** - 当 P2P 失败时，使用中继服务器
 
-### 3. DERP 中继
+#### 3. DERP 中继
 
 当两台设备无法直接连接时，Tailscale 会使用 **DERP**（Dummy Relative Elective Relay Protocol）服务器进行中继：
 
