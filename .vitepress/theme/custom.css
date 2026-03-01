@@ -79,14 +79,18 @@
   --vp-home-hero-image-background-image: linear-gradient(-45deg, #6b728050 50%, #d1d5db50 50%);
 }
 
-/* ==================== 通用样式 ==================== */
+/* ==================== 首页标题颜色 ==================== */
 
-/* 首页 Hero 区域 */
+/* 首页 Hero 区域 - 标题颜色跟随主题 */
 .VPHero .name {
   background: var(--vp-home-hero-name-background);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.VPHero .text {
+  color: var(--vp-c-brand-1) !important;
 }
 
 /* 功能卡片 */
@@ -150,14 +154,12 @@
 
 /* ==================== 侧边栏样式 ==================== */
 
-/* 分组标题 */
 .VPSidebarItem.is-group > .item > .text {
   font-size: 15px !important;
   font-weight: 600 !important;
   color: var(--vp-c-text-1) !important;
 }
 
-/* 笔记链接 */
 .VPSidebarItem.is-link > .item {
   padding-left: 12px !important;
 }

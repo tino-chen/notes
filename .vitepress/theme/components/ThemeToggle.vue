@@ -32,25 +32,29 @@ const getCurrentThemeColor = () => {
   return theme?.color || '#ff5c5c'
 }
 
-// 点击其他地方关闭下拉框
+const getCurrentThemeName = () => {
+  const theme = themes.find(t => t.id === currentTheme.value)
+  return theme?.name || '龙虾红'
+}
+
 const closeDropdown = () => {
   showDropdown.value = false
 }
 </script>
 
 <template>
-  <div class="theme-toggle" @click.stop>
+  <div class="theme-toggle-wrapper" @click.stop>
     <button 
       class="theme-toggle-btn" 
       @click="showDropdown = !showDropdown"
-      :title="'主题: ' + themes.find(t => t.id === currentTheme)?.name"
+      :title="'主题: ' + getCurrentThemeName()"
     >
       <span class="theme-dot" :style="{ background: getCurrentThemeColor() }"></span>
+      <span class="theme-label">主题</span>
     </button>
     
     <Transition name="fade">
       <div v-if="showDropdown" class="theme-dropdown">
-        <div class="dropdown-title">切换主题</div>
         <div 
           v-for="theme in themes" 
           :key="theme.id"
@@ -65,40 +69,42 @@ const closeDropdown = () => {
       </div>
     </Transition>
     
-    <!-- 点击外部关闭 -->
     <div v-if="showDropdown" class="dropdown-overlay" @click="closeDropdown"></div>
   </div>
 </template>
 
 <style scoped>
-.theme-toggle {
+.theme-toggle-wrapper {
   position: relative;
 }
 
 .theme-toggle-btn {
-  width: 36px;
-  height: 36px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 50%;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s;
+  color: var(--vp-c-text-1);
 }
 
 .theme-toggle-btn:hover {
-  background: var(--vp-c-bg-mute);
-  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
 }
 
 .theme-dot {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.theme-label {
+  font-size: 13px;
 }
 
 .theme-dropdown {
@@ -109,18 +115,9 @@ const closeDropdown = () => {
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  min-width: 150px;
+  min-width: 140px;
   z-index: 1000;
   overflow: hidden;
-}
-
-.dropdown-title {
-  padding: 12px 14px 8px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--vp-c-text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .theme-option {
@@ -141,8 +138,8 @@ const closeDropdown = () => {
 }
 
 .theme-color {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -150,13 +147,14 @@ const closeDropdown = () => {
 
 .theme-name {
   flex: 1;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--vp-c-text-1);
 }
 
 .theme-check {
   color: var(--vp-c-brand-1);
   font-weight: 600;
+  font-size: 12px;
 }
 
 .dropdown-overlay {
@@ -170,12 +168,12 @@ const closeDropdown = () => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity 0.15s, transform 0.15s;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 }
 </style>

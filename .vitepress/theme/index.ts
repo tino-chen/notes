@@ -12,7 +12,8 @@ export default {
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'nav-bar-content-after': () => h(ThemeToggle),
+      'doc-top': () => h(ArticleMeta),
+      'nav-bar-title-after': () => h(ThemeToggle),
     })
   }
 }
