@@ -8,15 +8,18 @@
 
   /* 增加左侧边栏宽度，避免笔记标题换行 */
   --vp-sidebar-width: 320px;
+
+  /* 增加整体布局宽度，让中间内容区更宽 */
+  --vp-layout-max-width: 1680px;
 }
 
-/* 右侧目录加宽并允许换行，避免显示省略号 */
+/* 右侧目录允许换行，避免显示省略号 */
 @media (min-width: 1280px) {
   .VPDoc .aside {
-    max-width: 440px;
+    max-width: 300px;
   }
   .VPDoc .aside-container {
-    width: 420px;
+    width: 280px;
   }
 }
 
