@@ -23,18 +23,6 @@ export default defineConfig({
       { text: 'Project', link: '/project/' },
     ],
     
-    sidebar: {
-      '/tool/': [
-        {
-          text: 'Tool',
-          collapsed: false,
-          items: [
-            { text: '概述', link: '/tool/' },
-          ]
-        }
-      ],
-    },
-    
     socialLinks: [
       { icon: 'github', link: 'https://github.com/tino-chen/notes' }
     ],
