@@ -1,71 +1,14 @@
-/* Tino's Notes 主题系统 */
+/* Tino's Notes 主题系统 - 默认龙虾红 */
 
+/* 龙虾红主题 */
 :root {
-  --theme-primary: #ff5c5c;
-  --theme-secondary: #ff9a5c;
-}
-
-/* ==================== 主题定义 ==================== */
-
-/* 龙虾红 - 默认 */
-[data-theme="lobster"] {
   --vp-c-brand-1: #ff5c5c;
   --vp-c-brand-2: #ff7070;
   --vp-c-brand-3: #ff9a5c;
   --vp-c-brand-soft: rgba(255, 92, 92, 0.14);
 }
 
-/* 海洋蓝 */
-[data-theme="ocean"] {
-  --vp-c-brand-1: #3b82f6;
-  --vp-c-brand-2: #60a5fa;
-  --vp-c-brand-3: #06b6d4;
-  --vp-c-brand-soft: rgba(59, 130, 246, 0.14);
-}
-
-/* 薄荷绿 */
-[data-theme="mint"] {
-  --vp-c-brand-1: #10b981;
-  --vp-c-brand-2: #34d399;
-  --vp-c-brand-3: #6ee7b7;
-  --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
-}
-
-/* 紫罗兰 */
-[data-theme="violet"] {
-  --vp-c-brand-1: #8b5cf6;
-  --vp-c-brand-2: #a78bfa;
-  --vp-c-brand-3: #c4b5fd;
-  --vp-c-brand-soft: rgba(139, 92, 246, 0.14);
-}
-
-/* 琥珀橙 */
-[data-theme="amber"] {
-  --vp-c-brand-1: #f59e0b;
-  --vp-c-brand-2: #fbbf24;
-  --vp-c-brand-3: #fcd34d;
-  --vp-c-brand-soft: rgba(245, 158, 11, 0.14);
-}
-
-/* 玫瑰粉 */
-[data-theme="rose"] {
-  --vp-c-brand-1: #ec4899;
-  --vp-c-brand-2: #f472b6;
-  --vp-c-brand-3: #f9a8d4;
-  --vp-c-brand-soft: rgba(236, 72, 153, 0.14);
-}
-
-/* 石墨灰 */
-[data-theme="graphite"] {
-  --vp-c-brand-1: #6b7280;
-  --vp-c-brand-2: #9ca3af;
-  --vp-c-brand-3: #d1d5db;
-  --vp-c-brand-soft: rgba(107, 114, 128, 0.14);
-}
-
-/* ==================== 首页标题渐变 ==================== */
-
-/* 首页 Hero 标题 - 使用 CSS 变量实现主题渐变 */
+/* 首页标题 */
 .VPHero .name {
   background: linear-gradient(120deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-3));
   -webkit-background-clip: text;
@@ -73,7 +16,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* 首页副标题 - 固定黑色 */
 .VPHero .text {
   color: #1a1a1a !important;
 }
@@ -177,28 +119,6 @@
   color: var(--vp-c-text-1) !important;
 }
 
-[data-theme="lobster"].dark { --vp-c-brand-soft: rgba(255, 92, 92, 0.24); }
-[data-theme="ocean"].dark { --vp-c-brand-soft: rgba(59, 130, 246, 0.24); }
-[data-theme="mint"].dark { --vp-c-brand-soft: rgba(16, 185, 129, 0.24); }
-[data-theme="violet"].dark { --vp-c-brand-soft: rgba(139, 92, 246, 0.24); }
-[data-theme="amber"].dark { --vp-c-brand-soft: rgba(245, 158, 11, 0.24); }
-[data-theme="rose"].dark { --vp-c-brand-soft: rgba(236, 72, 153, 0.24); }
-[data-theme="graphite"].dark { --vp-c-brand-soft: rgba(107, 114, 128, 0.24); }
-
-/* ==================== 主题按钮位置调整 ==================== */
-
-/* 导航栏按钮容器 - 添加竖线分隔 */
-.VPNavBar .content-body {
-  gap: 8px;
-}
-
-/* 在搜索框后添加竖线 */
-.VPNavBarSearch::after {
-  content: '';
-  display: inline-block;
-  width: 1px;
-  height: 24px;
-  background: var(--vp-c-divider);
-  margin: 0 12px;
-  vertical-align: middle;
+.dark {
+  --vp-c-brand-soft: rgba(255, 92, 92, 0.24);
 }
