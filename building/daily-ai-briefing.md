@@ -96,7 +96,13 @@ tags: [OpenClaw, Cron, 飞书, Agent, 自动化]
 - 来源多样性（有时过度依赖 TechCrunch）
 - 搜索覆盖面（部分信息源可能遗漏）
 
+## 技能开源
+
+简报系统的完整 Skill 已开源，可直接复现：
+
+- **GitHub**：https://github.com/tino-chen/openclaw-skills
+- 安装：`openclaw skills install daily-ai-briefing`（ClawHub）或手动 clone
+
 ## 参考资料
 
 - OpenClaw 文档：https://docs.openclaw.ai
-- 简报系统 Skill：`~/.openclaw/skills/daily-ai-briefing/SKILL.md`
