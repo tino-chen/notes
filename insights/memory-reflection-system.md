@@ -56,14 +56,14 @@ AI 助理每次会话醒来都是"全新的"，没有原生记忆。OpenClaw 通
 **目的**：保证 Agent 的连续性，不遗忘每天发生的事情。
 
 - **每日笔记**：`memory/YYYY-MM-DD.md`
-- **长期事实**：`MEMORY.md`（用户信息、项目概览、硬件配置等）
+- **长期事实**：`MEMORY.md`（项目概览、硬件配置等）
 - **规则**：只记事实（发生了什么），不记反思（学到了什么）
 
 ### 反思记忆 (Reflective Memory)
 
 **目的**：积累经验，通过晋升机制让 Agent 越来越聪明。
 
-- **目录**：`.learnings/`
+- **目录**：`.learnings/`，基于 `self-improving-agent` 技能实现
 - **LEARNINGS.md**：被纠正的错误、更好的做法、知识盲区、最佳实践
 - **ERRORS.md**：命令失败、API 报错、异常行为
 - **FEATURE_REQUESTS.md**：用户期望但尚不存在的功能
