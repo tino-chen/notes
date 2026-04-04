@@ -28,6 +28,7 @@ export default defineConfig({
           text: '工具实战',
           items: [
             { text: 'Tailscale - 远程连接 Mac Mini', link: '/practice/tailscale-remote-connect' },
+            { text: 'Daily AI Briefing 系统集成实践', link: '/practice/2026-04-05-Daily-AI-Briefing-System-Integration' },
           ]
         }
       ],
