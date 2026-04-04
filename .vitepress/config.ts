@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "Tino's Notes",
-  description: 'Ty Chen 的结构化知识库',
+  description: 'AI 协作实践笔记 —— 记录使用 AI 应用和工具的真实经验与最佳实践',
   
   head: [
     ['link', { rel: 'icon', href: '/notes/favicon.png', type: 'image/png' }],
@@ -16,20 +16,34 @@ export default defineConfig({
     siteTitle: "Tino's Notes",
     
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Agent', link: '/agent/' },
-      { text: 'LLM', link: '/llm/' },
-      { text: 'Tool', link: '/tool/' },
-      { text: 'Project', link: '/project/' },
+      { text: '首页', link: '/' },
+      { text: '工具实战', link: '/practice/' },
+      { text: '系统构建', link: '/building/' },
+      { text: '经验沉淀', link: '/insights/' },
     ],
     
     sidebar: {
-      '/tool/': [
+      '/practice/': [
         {
-          text: 'Network',
-          collapsed: false,
+          text: '工具实战',
           items: [
-            { text: 'Tailscale - 如何远程连接 Mac Mini ?', link: '/tool/network/tailscale-remote-connect' },
+            { text: 'Tailscale - 远程连接 Mac Mini', link: '/practice/tailscale-remote-connect' },
+          ]
+        }
+      ],
+      '/building/': [
+        {
+          text: '系统构建',
+          items: [
+            { text: '每日 AI 进展简报系统', link: '/building/daily-ai-briefing' },
+          ]
+        }
+      ],
+      '/insights/': [
+        {
+          text: '经验沉淀',
+          items: [
+            { text: 'OpenClaw 记忆与反思系统', link: '/insights/memory-reflection-system' },
           ]
         }
       ],

@@ -3,33 +3,30 @@ layout: home
 
 hero:
   name: "Tino's Notes"
-  text: "结构化知识库"
-  tagline: 个人学习笔记与技术沉淀
+  text: "AI 协作实践笔记"
+  tagline: 记录使用 AI 应用和工具的真实经验与最佳实践
   actions:
     - theme: brand
       text: 开始阅读
-      link: /tool/
+      link: /practice/
     - theme: alt
       text: GitHub
       link: https://github.com/tino-chen/notes
 
 features:
-  - icon: 🤖
-    title: Agent
-    details: Agent 范式、RAG、Memory、Context 等
-    link: /agent/
-  - icon: 🧠
-    title: LLM
-    details: 大语言模型预训练、后训练、评测等
-    link: /llm/
   - icon: 🛠️
-    title: Tool
-    details: AI 助手、编程工具的使用指南
-    link: /tool/
-  - icon: 📦
-    title: Project
-    details: 项目开发过程中的经验总结
-    link: /project/
+    title: 工具实战
+    details: AI 工具的使用、配置、踩坑与最佳实践
+    link: /practice/
+  - icon: 🏗️
+    title: 系统构建
+    details: 用 AI 搭建自动化系统的完整经验
+    link: /building/
+  - icon: 💡
+    title: 经验沉淀
+    details: 协作模式、方法论、架构思考与反思
+    link: /insights/
+
 ---
 
 <style>
