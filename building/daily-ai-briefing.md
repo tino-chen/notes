@@ -101,7 +101,8 @@ tags: [OpenClaw, Cron, 飞书, Agent, 自动化]
 简报系统的完整 Skill 已开源，可直接复现：
 
 - **GitHub**：https://github.com/tino-chen/openclaw-skills
-- 安装：`openclaw skills install daily-ai-briefing`（ClawHub）或手动 clone
+- **ClawHub**：`openclaw skills install daily-ai-briefing`
+- **在线查看**：https://clawhub.ai/skills/daily-ai-briefing
 
 ## 参考资料
 
