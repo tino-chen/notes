@@ -22,6 +22,31 @@ export default defineConfig({
     ],
     
     sidebar: {
+      '/practice/': [
+        {
+          text: '实践案例',
+          items: [
+            { text: '事实核查实战案例', link: '/practice/2026-04-05-事实核查实战案例' },
+            { text: '早报系统故障修复实战经验', link: '/practice/2026-04-05-早报系统故障修复实战经验' },
+          ]
+        }
+      ],
+      '/insights/': [
+        {
+          text: '深度洞察',
+          items: [
+            { text: '心跳机制与推理模式优化实践', link: '/insights/2026-04-05-心跳机制与推理模式优化实践' },
+          ]
+        }
+      ],
+      '/building/': [
+        {
+          text: '建设经验',
+          items: [
+            { text: '技能管理全流程规范制定经验', link: '/building/2026-04-05-技能管理全流程规范制定经验' },
+          ]
+        }
+      ],
       '/workflows/': [
         {
           text: '流程构建',
