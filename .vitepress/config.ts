@@ -17,25 +17,25 @@ export default defineConfig({
     
     nav: [
       { text: '首页', link: '/' },
-      { text: '工具推荐', link: '/tools/' },
       { text: '流程构建', link: '/workflows/' },
+      { text: '工具推荐', link: '/tools/' },
     ],
     
     sidebar: {
-      '/tools/': [
-        {
-          text: '工具推荐',
-          items: [
-            { text: 'Tailscale — 远程连接 Mac Mini', link: '/tools/tailscale-remote-connect' },
-          ]
-        }
-      ],
       '/workflows/': [
         {
           text: '流程构建',
           items: [
             { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
             { text: 'OpenClaw 记忆与反思系统', link: '/workflows/memory-reflection-system' },
+          ]
+        }
+      ],
+      '/tools/': [
+        {
+          text: '工具推荐',
+          items: [
+            { text: 'Tailscale — 远程连接 Mac Mini', link: '/tools/tailscale-remote-connect' },
           ]
         }
       ],

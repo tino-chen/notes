@@ -8,20 +8,20 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /tools/
+      link: /workflows/
     - theme: alt
       text: GitHub
       link: https://github.com/tino-chen/notes
 
 features:
-  - icon: 🔧
-    title: 工具推荐
-    details: 好用高效的工具推荐与配置指南
-    link: /tools/
   - icon: ⚙️
     title: 流程构建
     details: 用 AI 搭建自动化流程的实战经验与架构设计
     link: /workflows/
+  - icon: 🔧
+    title: 工具推荐
+    details: 好用高效的工具推荐与配置指南
+    link: /tools/
 
 ---
 

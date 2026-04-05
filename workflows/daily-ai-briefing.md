@@ -91,6 +91,10 @@ tags: [OpenClaw, Cron, 飞书, Agent, 自动化]
 
 系统已稳定运行，每日 08:00 自动生成、08:10 审查后推送到飞书。
 
+### 样例展示
+
+![每日 AI 进展简报样例](/daily-ai-briefing-example.png)
+
 **持续改进方向**：
 - 时间准确性（相对时间计算偶尔不精确）
 - 来源多样性（有时过度依赖 TechCrunch）

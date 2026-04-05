@@ -96,8 +96,6 @@ touch ~/.openclaw/workspace/.learnings/FEATURE_REQUESTS.md
 **LEARNINGS.md 示例**：
 
 ```markdown
-# LEARNINGS.md - 反思记忆
-
 ## [LRN-20260404-001] correction
 
 **Logged**: 2026-04-04T12:07:00+08:00
@@ -127,47 +125,97 @@ touch ~/.openclaw/workspace/.learnings/FEATURE_REQUESTS.md
 ```markdown
 ## 记忆
 
-### 情形记忆 (memory/YYYY-MM-DD.md)
-- 只记事实（发生了什么），不记反思（学到了什么）
-- 文件名格式：YYYY-MM-DD.md
+### 情形记忆 (Episodic Memory)
 
-### 反思记忆 (.learnings/)
-- 被纠正的错误 → LEARNINGS.md
-- 命令/API 失败 → ERRORS.md
-- 用户想要但没有的功能 → FEATURE_REQUESTS.md
+- **每日笔记**：memory/YYYY-MM-DD.md
+- **长期记忆**：MEMORY.md —— 项目概览、硬件配置等长期事实
+- **目的**：保证连续性，不遗忘每天发生的事情
+- **规则**：只记事实（发生了什么），不记反思（学到了什么）
+
+### 反思记忆 (Reflective Memory)
+
+- **目录**：.learnings/
+- **LEARNINGS.md** — 被纠正的错误、更好的做法、知识盲区、最佳实践
+- **ERRORS.md** — 命令失败、API 报错、异常行为
+- **FEATURE_REQUESTS.md** — 用户期望但尚不存在的功能
+- **目的**：积累经验，通过晋升机制让自己越来越聪明
+- **晋升**：每天夜里 3:00 定时任务审查，符合条件的晋升到核心配置文件
+
+### 晋升机制
+
+1. **记录**：交互中遇到值得反思的情况 → 写入 .learnings/
+2. **审查**：每天 3:00 定时任务审查 .learnings/ 中的 pending 条目
+3. **晋升**：符合条件的经验提炼为简短规则，写入目标配置文件
+4. **标记**：原条目 status 改为 promoted
+
+| 经验类型 | 晋升到 |
+|----------|--------|
+| 行为模式改进 | SOUL.md |
+| 工作流程优化 | AGENTS.md |
+| 工具使用坑点 | TOOLS.md |
+| 用户偏好 | USER.md |
 ```
 
-### 第四步：创建定时审查任务
+### 第四步：在 HEARTBEAT.md 中触发记录
 
-用 OpenClaw cron 创建每天 3:00 的审查任务（isolated session）：
-
-```
-审查内容分两部分：
-
-1. 情形记忆晋升
-   - 读取 memory/.review-state.json 获取上次审查日期
-   - 读取该日期之后的新每日笔记
-   - 识别值得长期保留的内容：
-     - 项目里程碑 → MEMORY.md
-     - 配置变更 → MEMORY.md
-     - 用户偏好 → USER.md
-   - 只复制提炼，不删除原始笔记（保持时序性）
-   - 更新 review-state.json
-
-2. 反思记忆晋升
-   - 读取 .learnings/ 下所有 pending 条目
-   - 评估是否值得晋升（反复出现 > 用户纠正 > 偶发）
-   - 晋升到目标文件：行为改进 → SOUL.md，流程优化 → AGENTS.md，工具坑点 → TOOLS.md
-   - 标记为 promoted
-```
-
-### 第五步：在 HEARTBEAT.md 中触发记录
-
-心跳是反思记忆的主要写入时机。在 HEARTBEAT.md 中加入：
+心跳是反思记忆的主要写入时机。在 HEARTBEAT.md 的检查步骤中加入：
 
 ```markdown
-- 记录每日情形记忆 → memory/YYYY-MM-DD.md
-- 如果本次交互中被纠正或发现了更好的做法 → .learnings/LEARNINGS.md
+1. **检查时间**：如果是深夜（23:00-08:00），只做简单检查后返回
+2. **记录每日记忆**：更新 memory/YYYY-MM-DD.md，记录当天做了什么（情形记忆）
+3. **记录反思经验**：如果本次交互中遇到了值得反思的情况（被纠正、发现更好的做法、踩了坑），记录到 .learnings/ 对应文件中
+```
+
+这样每次心跳轮询时，Agent 会自动把当天的情形和反思分别写入对应文件。
+
+### 第五步：创建定时审查任务
+
+用 OpenClaw cron 创建每天 3:00 的审查任务（isolated session）。完整的 prompt 如下：
+
+**情形记忆晋升部分**：
+
+```
+1. 读取审查进度文件 ~/.openclaw/workspace/memory/.review-state.json，
+   格式：{"lastReviewed": "YYYY-MM-DD"}。不存在则视为从未审查
+2. 读取 ~/.openclaw/workspace/memory/ 下所有日期 > lastReviewed 的每日记忆文件
+3. 读取 ~/.openclaw/workspace/MEMORY.md 和 ~/.openclaw/workspace/USER.md
+4. 识别每日笔记中值得长期保留的内容，按类型晋升到对应文件：
+   - 项目里程碑（完成/上线/归档）→ MEMORY.md
+   - 重要的配置变更或架构调整 → MEMORY.md
+   - 新的协作产出目录或工作流程 → MEMORY.md
+   - 用户偏好、习惯、表达喜好 → USER.md
+   - 任何未来会话需要知道的事实 → MEMORY.md
+5. 晋升是复制+提炼，不要删除原始每日笔记中的内容（保持时序完整性）
+6. 更新 .review-state.json 的 lastReviewed 为今天日期
+```
+
+**反思记忆晋升部分**：
+
+```
+1. 读取 .learnings/LEARNINGS.md、.learnings/ERRORS.md、.learnings/FEATURE_REQUESTS.md
+2. 找出所有 status 为 pending 的条目
+3. 评估每条是否值得晋升：
+   - 出现过 2 次以上的经验 → 高优先晋升
+   - 被用户明确纠正的经验 → 中优先晋升
+   - 一次性偶发问题 → 保留观察
+4. 将值得晋升的经验提炼为简短规则，写入目标配置文件：
+   - 行为模式改进 → SOUL.md
+   - 工作流程优化 → AGENTS.md
+   - 工具使用坑点 → TOOLS.md
+   - 用户偏好 → USER.md
+5. 更新原条目的 status 为 promoted，并记录晋升目标
+```
+
+**cron 任务配置**：
+
+```yaml
+schedule: "0 3 * * *"    # 每天 3:00
+timezone: Asia/Shanghai
+sessionTarget: isolated   # 独立 session，不污染主会话
+timeout: 300s
+delivery:
+  mode: announce          # 有重要发现时通知用户
+  channel: feishu
 ```
 
 ## 各文件的职责边界
@@ -199,6 +247,10 @@ touch ~/.openclaw/workspace/.learnings/FEATURE_REQUESTS.md
 ### 4. 心跳重复读取浪费 token
 
 最初设计每次审查读过去 7 天的每日笔记，导致同一条记忆被反复处理 7 次。改用 `.review-state.json` 记录进度，每次只读新的一天的笔记。
+
+### 5. 晋升删除了原始笔记
+
+最初设计晋升后删除每日笔记中的冗余内容，但这样丢失了时序性——"4月3日做了什么"是情形记忆的核心价值。改为只复制+提炼，原始笔记保持不动。
 
 ## 参考资料
 
