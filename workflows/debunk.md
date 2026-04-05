@@ -21,7 +21,7 @@ tags: [OpenClaw, Agent, 事实核查, Prompt Engineering]
 
 ### 样例展示
 
-以下是对一篇"阿里 Qwen3.6-Plus 性能直逼 Claude"文章的事实核查结果：
+以下是对一条"Anthropic 开源代码库并更名 OpenClaude"假新闻的事实核查结果（实为愚人节文章被搬运成突发新闻）：
 
 ![可信度评级与核查清单](/debunk-example-1.png)
 
@@ -63,7 +63,7 @@ tags: [OpenClaw, Agent, 事实核查, Prompt Engineering]
 openclaw skills install debunk
 ```
 
-技能安装后位于 `~/.openclaw/skills/fact-checker/`。内部名称为 `debunk`（从 `fact-checker` 重命名而来），但目录名保持 `fact-checker` 不变。
+技能安装后位于 `~/.openclaw/skills/debunk/`。
 
 ### 第二步：理解两种使用场景
 
@@ -143,7 +143,7 @@ openclaw skills install debunk
 公众号（`mp.weixin.qq.com`）有反爬，`web_fetch` 大概率失败。技能内置了 Playwright 脚本兜底：
 
 ```bash
-node ~/.openclaw/skills/fact-checker/scripts/fetch-url.js "<url>" --max-chars 15000
+node ~/.openclaw/skills/debunk/scripts/fetch-url.js "<url>" --max-chars 15000
 ```
 
 抓取优先级：`web_fetch` → Playwright 脚本 → 提示用户复制粘贴。
