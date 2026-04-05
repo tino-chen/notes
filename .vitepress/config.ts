@@ -27,6 +27,7 @@ export default defineConfig({
           text: '流程构建',
           items: [
             { text: 'OpenClaw 记忆与反思系统', link: '/workflows/memory-reflection-system' },
+            { text: '自动笔记撰写与发布系统', link: '/workflows/auto-note-system' },
             { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
           ]
         }
