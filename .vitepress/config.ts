@@ -17,34 +17,25 @@ export default defineConfig({
     
     nav: [
       { text: '首页', link: '/' },
-      { text: '工具实战', link: '/practice/' },
-      { text: '系统构建', link: '/building/' },
-      { text: '经验沉淀', link: '/insights/' },
+      { text: '工具推荐', link: '/tools/' },
+      { text: '流程构建', link: '/workflows/' },
     ],
     
     sidebar: {
-      '/practice/': [
+      '/tools/': [
         {
-          text: '工具实战',
+          text: '工具推荐',
           items: [
-            { text: 'Tailscale - 远程连接 Mac Mini', link: '/practice/tailscale-remote-connect' },
-            { text: 'Daily AI Briefing 系统集成实践', link: '/practice/2026-04-05-Daily-AI-Briefing-System-Integration' },
+            { text: 'Tailscale — 远程连接 Mac Mini', link: '/tools/tailscale-remote-connect' },
           ]
         }
       ],
-      '/building/': [
+      '/workflows/': [
         {
-          text: '系统构建',
+          text: '流程构建',
           items: [
-            { text: '每日 AI 进展简报系统', link: '/building/daily-ai-briefing' },
-          ]
-        }
-      ],
-      '/insights/': [
-        {
-          text: '经验沉淀',
-          items: [
-            { text: 'OpenClaw 记忆与反思系统', link: '/insights/memory-reflection-system' },
+            { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
+            { text: 'OpenClaw 记忆与反思系统', link: '/workflows/memory-reflection-system' },
           ]
         }
       ],
