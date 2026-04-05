@@ -60,11 +60,36 @@ workspace/
 
 ## 实操步骤
 
-### 第一步：创建反思记忆目录
+### 第一步：安装 self-improving-agent 技能并初始化
 
 ```bash
-mkdir ~/.openclaw/workspace/.learnings
+# 安装技能
+openclaw skills install self-improving-agent
 ```
+
+安装后必须手动初始化——技能本身不会自动创建目录和文件：
+
+```bash
+# 创建反思记忆目录
+mkdir ~/.openclaw/workspace/.learnings
+
+# 创建三个日志文件
+touch ~/.openclaw/workspace/.learnings/LEARNINGS.md
+touch ~/.openclaw/workspace/.learnings/ERRORS.md
+touch ~/.openclaw/workspace/.learnings/FEATURE_REQUESTS.md
+```
+
+在 `LEARNINGS.md` 中添加标题头：
+
+```markdown
+# LEARNINGS.md - 反思记忆
+
+记录值得反思的经验教训。每日定时任务审查并晋升到核心配置文件。
+```
+
+> ⚠️ **常见坑**：技能安装不等于启用。安装后如果不创建目录和文件，反思记忆系统根本不会工作。
+
+### 第二步：了解日志文件格式
 
 创建三个日志文件，格式如下：
 
@@ -95,7 +120,7 @@ mkdir ~/.openclaw/workspace/.learnings
 - `Priority`: high（用户纠正）> medium（自我发现）> low（偶发问题）
 - `Area`: config / style / thinking / note-taking 等分类
 
-### 第二步：在 AGENTS.md 中定义记忆规范
+### 第三步：在 AGENTS.md 中定义记忆规范
 
 在 AGENTS.md 中加入记忆章节，明确每种记忆的写入规则：
 
@@ -112,7 +137,7 @@ mkdir ~/.openclaw/workspace/.learnings
 - 用户想要但没有的功能 → FEATURE_REQUESTS.md
 ```
 
-### 第三步：创建定时审查任务
+### 第四步：创建定时审查任务
 
 用 OpenClaw cron 创建每天 3:00 的审查任务（isolated session）：
 
@@ -136,7 +161,7 @@ mkdir ~/.openclaw/workspace/.learnings
    - 标记为 promoted
 ```
 
-### 第四步：在 HEARTBEAT.md 中触发记录
+### 第五步：在 HEARTBEAT.md 中触发记录
 
 心跳是反思记忆的主要写入时机。在 HEARTBEAT.md 中加入：
 
