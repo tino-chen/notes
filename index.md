@@ -8,24 +8,20 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /practice/
+      link: /tools/
     - theme: alt
       text: GitHub
       link: https://github.com/tino-chen/notes
 
 features:
-  - icon: 🛠️
-    title: 工具实战
-    details: AI 工具的使用、配置、踩坑与最佳实践
-    link: /practice/
-  - icon: 🏗️
-    title: 系统构建
-    details: 用 AI 搭建自动化系统的完整经验
-    link: /building/
-  - icon: 💡
-    title: 经验沉淀
-    details: 协作模式、方法论、架构思考与反思
-    link: /insights/
+  - icon: 🔧
+    title: 工具推荐
+    details: 好用高效的工具推荐与配置指南
+    link: /tools/
+  - icon: ⚙️
+    title: 流程构建
+    details: 用 AI 搭建自动化流程的实战经验与架构设计
+    link: /workflows/
 
 ---
 
