@@ -28,6 +28,7 @@ export default defineConfig({
           items: [
             { text: '事实核查实战案例', link: '/practice/2026-04-05-事实核查实战案例' },
             { text: '早报系统故障修复实战经验', link: '/practice/2026-04-05-早报系统故障修复实战经验' },
+            { text: 'Daily AI简报Agent实现指南', link: '/practice/daily-ai-briefing-agent-implementation' },
           ]
         }
       ],
@@ -36,6 +37,7 @@ export default defineConfig({
           text: '深度洞察',
           items: [
             { text: '心跳机制与推理模式优化实践', link: '/insights/2026-04-05-心跳机制与推理模式优化实践' },
+            { text: '事实核查技能开发与ClawHub发布实践', link: '/insights/skill-publishing-fact-checking' },
           ]
         }
       ],
@@ -44,6 +46,7 @@ export default defineConfig({
           text: '建设经验',
           items: [
             { text: '技能管理全流程规范制定经验', link: '/building/2026-04-05-技能管理全流程规范制定经验' },
+            { text: 'OpenClaw记忆系统架构重构实践', link: '/building/memory-system-redesign' },
           ]
         }
       ],
@@ -55,6 +58,7 @@ export default defineConfig({
             { text: '自动笔记撰写与发布系统', link: '/workflows/auto-note-system' },
             { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
             { text: 'Debunk 事实核查技能', link: '/workflows/debunk' },
+            { text: '每日AI简报系统架构重构实践', link: '/workflows/daily-ai-briefing-architecture' },
           ]
         }
       ],
@@ -63,6 +67,7 @@ export default defineConfig({
           text: '工具推荐',
           items: [
             { text: 'Tailscale — 远程连接 Mac Mini', link: '/tools/tailscale-remote-connect' },
+            { text: '邮件工具选择与OAuth集成实践', link: '/tools/email-tool-selection' },
           ]
         }
       ],
