@@ -121,7 +121,7 @@ daily-ai-briefing/
 ```
 
 ### 关键配置
-- **gog OAuth**：`~/Library/Application Support/gogcli/credentials.json`
+- **gog OAuth**：通过 `gog auth` 配置（⚠️ 凭据文件切勿提交到公开仓库）
 - **Feishu webhook**：用于重要邮件通知和简报推送
 - **搜索源**：从3个扩展到8个（techcrunch/venturebeat/theverge/arstechnica/36kr/jiqizhixin/qbitai/infoq）
 
