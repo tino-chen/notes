@@ -16,7 +16,7 @@ tags: [邮件配置, OAuth, 工具选择, 代理兼容性]
 
 **配置过程：**
 ```yaml
-account: tino.ai.chen@gmail.com
+account: <your-email>@gmail.com
 host: imap.gmail.com
 port: 993
 starttls: false
@@ -80,8 +80,9 @@ gog gmail read <ID>
 ```markdown
 ### 邮件（Gmail）
 - **工具**：gog（Google Workspace CLI）— 走 Google API，代理兼容性好，推荐使用
-- **账号**：tino.ai.chen@gmail.com
+- **账号**：<your-email>@gmail.com
 - **OAuth 凭据**：`~/Library/Application Support/gogcli/credentials.json`
+  ⚠️ 此路径包含敏感凭据，切勿提交到公开仓库
 - **用法**：
   - 搜索邮件：`gog gmail search 'newer_than:3d' --max 10`
   - 读邮件：`gog gmail read <ID>`
