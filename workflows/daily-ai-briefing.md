@@ -27,10 +27,18 @@ tags: [OpenClaw, Cron, 飞书, Agent, 自动化]
 
 ```
 08:00  生成任务（isolated session）
-       └─ 读取历史去重 → 检查重点关注源 → 搜索 → 提纯 → 自检 → 保存文件
+       ├─ 读取历史去重（最近7天简报）
+       ├─ 检查重点关注信息源（sources.md）
+       ├─ 主流兜底搜索（学术/GitHub/行业新闻）
+       ├─ 逐条提纯（红线过滤 + web_fetch 验证）
+       ├─ 最终自检（逐条核对自检清单）
+       └─ 保存至 ~/Desktop/daily_ai_briefing/YYYY_MM_DD.md
 
 08:10  审查任务（isolated session）
-       └─ 读取简报 → 逐条审查红线 → 修正 → 推送飞书
+       ├─ 读取今日简报 + 红线规则
+       ├─ 逐条审查（7条红线逐项核对）
+       ├─ 发现问题直接修正文件
+       └─ 输出最终简报 → 推送飞书
 ```
 
 ### 为什么拆成两步？
@@ -143,6 +151,35 @@ delivery:
 
 > 完整规则见 `~/.openclaw/skills/daily-ai-briefing/SKILL.md`。
 
+## 搜索策略
+
+### 重点关注信息源（sources.md）
+
+技能内置了一份重点关注信息源列表，覆盖国内外主要 AI 机构：
+
+| 机构 | 官方渠道 | 示例 |
+|------|---------|------|
+| Google Gemini | blog.google | `site:blog.google Gemini` |
+| OpenAI | openai.com/news | `site:openai.com/news` |
+| Anthropic | anthropic.com/news | `site:anthropic.com/news` |
+| 阿里 Qwen | alibabacloud.com/blog | `site:alibabacloud.com/blog Qwen` |
+| DeepSeek | deepseek.ai | `site:deepseek.ai` |
+| 智谱 GLM | zhipuai.cn | `site:zhipuai.cn` |
+| 月之暗面 Kimi | moonshot.cn | `site:moonshot.cn` |
+| 稀宇 MiniMax | minimaxi.com | `site:minimaxi.com` |
+
+每天先用 `web_search`（`freshness: "day"`）逐一检测这些源是否有新动态，有命中则用 `web_fetch` 提取详情。
+
+### 主流兜底搜索
+
+无论重点关注源是否有命中，以下搜索每天必须执行：
+
+- **学术**（1轮）：arxiv.org + huggingface.co/papers，按当月年份搜索
+- **GitHub**（1轮）：trending 页面 + 最近有 push 的项目
+- **行业新闻**（2轮）：每轮从国际（techcrunch/venturebeat/theverge/arstechnica）和中文（36kr/jiqizhixin/qbitai/infoq）各选至少1个，两轮不重复
+
+搜索轮次有上限，避免无限扩展。
+
 ## 踩坑记录
 
 ### 1. GLM-5.1 执行多步任务不稳定
@@ -163,7 +200,7 @@ delivery:
 
 ### 5. 来源多样性不足
 
-有时过度依赖 TechCrunch，导致信息来源单一。解决：搜索策略要求至少搜索 2 个不同来源，并在 SKILL.md 中维护重点关注信息源列表。
+有时过度依赖 TechCrunch，导致信息来源单一。解决：建立重点关注信息源列表 + 兜底搜索策略，确保国内外主流渠道都有覆盖。
 
 ## 技能开源
 
