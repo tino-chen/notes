@@ -58,7 +58,6 @@ export default defineConfig({
             { text: '自动笔记撰写与发布系统', link: '/workflows/auto-note-system' },
             { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
             { text: 'Debunk 事实核查技能', link: '/workflows/debunk' },
-            { text: '每日AI简报系统架构重构实践', link: '/workflows/daily-ai-briefing-architecture' },
             { text: 'AI技能发布管理规范与实践', link: '/workflows/2026-04-10-AI技能发布管理规范与实践' },
           ]
         }
