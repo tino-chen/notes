@@ -81,8 +81,7 @@ gog gmail read <ID>
 ### 邮件（Gmail）
 - **工具**：gog（Google Workspace CLI）— 走 Google API，代理兼容性好，推荐使用
 - **账号**：<your-email>@gmail.com
-- **OAuth 凭据**：`~/Library/Application Support/gogcli/credentials.json`
-  ⚠️ 此路径包含敏感凭据，切勿提交到公开仓库
+- **OAuth 凭据**：通过 `gog auth` 配置（⚠️ 凭据文件切勿提交到公开仓库）
 - **用法**：
   - 搜索邮件：`gog gmail search 'newer_than:3d' --max 10`
   - 读邮件：`gog gmail read <ID>`
