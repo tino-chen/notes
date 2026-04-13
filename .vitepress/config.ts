@@ -29,6 +29,7 @@ export default defineConfig({
             { text: 'OpenClaw 记忆与反思系统', link: '/workflows/memory-reflection-system' },
             { text: '自动笔记撰写与发布系统', link: '/workflows/auto-note-system' },
             { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
+            { text: 'AI简报系统架构重构实战', link: '/workflows/ai-briefing-system-architecture-refactoring' },
             { text: 'Debunk 事实核查技能', link: '/workflows/debunk' },
             { text: 'AI技能发布管理规范与实践', link: '/workflows/2026-04-10-AI技能发布管理规范与实践' },
           ]
@@ -40,6 +41,7 @@ export default defineConfig({
           items: [
             { text: 'Tailscale — 远程连接 Mac Mini', link: '/tools/tailscale-remote-connect' },
             { text: '邮件工具选择与OAuth集成实践', link: '/tools/email-tool-selection' },
+            { text: '邮件工具集成与OAuth配置实践', link: '/tools/email-tool-integration-oauth-configuration' },
           ]
         }
       ],
