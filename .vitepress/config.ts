@@ -32,6 +32,7 @@ export default defineConfig({
             { text: 'AI简报系统架构重构实战', link: '/workflows/ai-briefing-system-architecture-refactoring' },
             { text: 'Debunk 事实核查技能', link: '/workflows/debunk' },
             { text: 'AI技能发布管理规范与实践', link: '/workflows/2026-04-10-AI技能发布管理规范与实践' },
+            { text: 'AI Agent技能发布与简报质量管控架构', link: '/workflows/2026-04-15-AI-Agent技能发布与简报质量管控架构' },
           ]
         }
       ],
