@@ -29,10 +29,13 @@ export default defineConfig({
             { text: 'OpenClaw 记忆与反思系统', link: '/workflows/memory-reflection-system' },
             { text: '自动笔记撰写与发布系统', link: '/workflows/auto-note-system' },
             { text: '每日 AI 进展简报系统', link: '/workflows/daily-ai-briefing' },
-            { text: 'AI简报系统架构重构实战', link: '/workflows/ai-briefing-system-architecture-refactoring' },
             { text: 'Debunk 事实核查技能', link: '/workflows/debunk' },
             { text: 'AI技能发布管理规范与实践', link: '/workflows/2026-04-10-AI技能发布管理规范与实践' },
             { text: 'AI Agent技能发布与简报质量管控架构', link: '/workflows/2026-04-15-AI-Agent技能发布与简报质量管控架构' },
+            { text: '目录命名规范制定与实践', link: '/workflows/目录命名规范制定与实践' },
+            { text: 'Gmail OAuth配置迁移与方案对比', link: '/workflows/Gmail-OAuth配置迁移与方案对比' },
+            { text: 'AI技能全流程管理规范', link: '/workflows/AI技能全流程管理规范' },
+            { text: '邮件通知系统集成架构', link: '/workflows/邮件通知系统集成架构' },
           ]
         }
       ],
