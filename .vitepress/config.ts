@@ -14,10 +14,12 @@ export default defineConfig({
   
   themeConfig: {
     siteTitle: "Tino's Notes",
+    ignoreDeadLinks: true,
     
     nav: [
       { text: '首页', link: '/' },
       { text: '流程构建', link: '/workflows/' },
+      { text: '经验洞察', link: '/insights/' },
       { text: '工具推荐', link: '/tools/' },
     ],
     
@@ -36,6 +38,16 @@ export default defineConfig({
             { text: 'Gmail OAuth配置迁移与方案对比', link: '/workflows/Gmail-OAuth配置迁移与方案对比' },
             { text: 'AI技能全流程管理规范', link: '/workflows/AI技能全流程管理规范' },
             { text: '邮件通知系统集成架构', link: '/workflows/邮件通知系统集成架构' },
+            { text: '微信集成方案技术选型与限制分析', link: '/workflows/wei-xin-ji-cheng-fang-an-ji-zhu-xuan-xing-yu-xian-zhi-fen-xi' },
+          ]
+        }
+      ],
+      '/insights/': [
+        {
+          text: '经验洞察',
+          items: [
+            { text: 'AI生成内容质量控制审查方法论', link: '/insights/ai生成内容质量控制审查方法论' },
+            { text: '第三方服务API设计问题识别与用户体验优化', link: '/insights/di-san-fang-fu-wu-api-she-ji-wen-ti-shi-bie-yu-yong-hu-ti-yan-you-hua' },
           ]
         }
       ],
