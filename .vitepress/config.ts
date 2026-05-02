@@ -35,6 +35,7 @@ export default defineConfig({
             { text: 'AI技能发布管理规范与实践', link: '/workflows/2026-04-10-AI技能发布管理规范与实践' },
             { text: 'AI Agent技能发布与简报质量管控架构', link: '/workflows/2026-04-15-AI-Agent技能发布与简报质量管控架构' },
             { text: '目录命名规范制定与实践', link: '/workflows/目录命名规范制定与实践' },
+            { text: 'AI简报系统架构重构与质量优化实践', link: '/workflows/2026-05-03-AI简报系统架构重构与质量优化实践' },
             { text: 'Gmail OAuth配置迁移与方案对比', link: '/workflows/Gmail-OAuth配置迁移与方案对比' },
             { text: 'AI技能全流程管理规范', link: '/workflows/AI技能全流程管理规范' },
             { text: '邮件通知系统集成架构', link: '/workflows/邮件通知系统集成架构' },
