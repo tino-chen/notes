@@ -59,6 +59,7 @@ export default defineConfig({
             { text: 'Tailscale — 远程连接 Mac Mini', link: '/tools/tailscale-remote-connect' },
             { text: '邮件工具选择与OAuth集成实践', link: '/tools/email-tool-selection' },
             { text: '邮件工具集成与OAuth配置实践', link: '/tools/email-tool-integration-oauth-configuration' },
+            { text: 'Mac系统资源监控与内存压力诊断处理', link: '/tools/system-management/mac-system-memory-monitoring-diagnosis' },
           ]
         }
       ],
